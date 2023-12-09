@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NutNotify", "NutNotify\NutNotify.csproj", "{EEAB5C78-1ED2-47D7-B453-4E19D4758665}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEAB5C78-1ED2-47D7-B453-4E19D4758665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEAB5C78-1ED2-47D7-B453-4E19D4758665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEAB5C78-1ED2-47D7-B453-4E19D4758665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEAB5C78-1ED2-47D7-B453-4E19D4758665}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {529D3E83-0A7D-4F40-BBE9-02DD9F900248}
+	EndGlobalSection
+EndGlobal
