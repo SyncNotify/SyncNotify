@@ -89,7 +89,11 @@ namespace NutNotify
             EditWatcher watcher = new EditWatcher();
             watcher.init();
             //_mainWindowVisibility = Visibility.Hidden;
-            Visibility = Visibility.Hidden;
+
+
+
+            //测试用
+            //Visibility = Visibility.Hidden;
         }
         public static void bridgeForResponse(string value)
         {

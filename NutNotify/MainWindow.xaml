@@ -5,19 +5,21 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:NutNotify"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
     Title="NutNotify Ver0.1.0"
     Width="800"
     Height="450"
-    Visibility="{Binding mainWindowVisibility}"
-    Topmost="True"
-    WindowStartupLocation="CenterScreen"
     
+    Topmost="True"
+    Visibility="{Binding mainWindowVisibility}"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
         <TextBlock
             x:Name="notificationTextBlock"
             FontSize="60"
-            TextWrapping = "Wrap"
-            Text="暂无消息" />
+            Text="暂无消息"
+            TextWrapping="Wrap" />
+        <ui:ToggleSwitch />
     </Grid>
 </Window>
