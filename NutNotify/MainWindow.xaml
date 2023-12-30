@@ -23,7 +23,7 @@
             x:Name="navigationView"
             ItemInvoked="navigationView_ItemInvoked"
             PaneDisplayMode="Left">
-            <muxc:NavigationView.MenuItems>
+            <muxc:NavigationView.MenuItems> 
                 <muxc:NavigationViewItem Content="即时消息" Tag="realTimeMessage">
                     <muxc:NavigationViewItem.Icon>
                         <ui:FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xe8bd;" />
