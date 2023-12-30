@@ -12,6 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using AutoUpdaterDotNET;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -97,6 +98,7 @@ namespace NutNotify
 
             //测试用
             //Visibility = Visibility.Hidden;
+            AutoUpdater.Start("https://raw.gitmirror.com/onear233/NutNotify/master/updateInfo.xml");
         }
         public static void bridgeForResponse(string value)
         {
