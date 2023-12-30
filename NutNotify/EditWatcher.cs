@@ -57,7 +57,7 @@ namespace NutNotify
 
                 // 关闭流
                 reader.Close();
-                MainWindow.Instance.responseGetter(content);
+                RealTimeMessagePage.Instance.responseGetter(content);
 
             }).Start();
 

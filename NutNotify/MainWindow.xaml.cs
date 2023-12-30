@@ -20,6 +20,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MessageBox = System.Windows.MessageBox;
 
 namespace NutNotify
 {
@@ -91,8 +92,8 @@ namespace NutNotify
             EditWatcher watcher = new EditWatcher();
             watcher.init();
             //_mainWindowVisibility = Visibility.Hidden;
-
-
+            // 初始化默认页面
+            MainFrame.Navigate(new RealTimeMessagePage());
 
             //测试用
             //Visibility = Visibility.Hidden;
@@ -105,33 +106,24 @@ namespace NutNotify
             }
         }
 
-        public void responseGetter(string value)
-        {
-            //_mainWindowVisibility = Visibility.Visible;
-            notificationTextBlock.Dispatcher.Invoke(() =>
-            {
-                notificationTextBlock.Text = value;
-            });
-            this.Dispatcher.Invoke(() =>
-            {
-                WindowState = WindowState.Normal;
-                this.Visibility = Visibility.Hidden;
-                this.Visibility = Visibility.Visible;
-
-            });
-            new ToastContentBuilder()
-                   .AddArgument("action", "viewConversation")
-                   .AddArgument("conversationId", 9813)
-                   .AddText("您有一条新消息")
-                   .AddText("打开主界面查看")
-                   .AddAudio(new Uri(Environment.GetEnvironmentVariable("SYSTEMROOT") + "\\Media\\Windows Ding.wav") )
-                   .Show();
-        }
+        
         public event TypedEventHandler<NavigationView, NavigationViewSelectionChangedEventArgs> SelectionChanged;
 
-        private void nvSample9_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        private void navigationView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
-
+            // 获取选中项的标签
+            string selectedItemTag = args.InvokedItemContainer.Tag.ToString();
+            // 根据标签切换页面
+            switch (selectedItemTag)
+            {
+                case "realTimeMessage":
+                    MainFrame.Navigate(new RealTimeMessagePage());
+                    break;
+                case "announcement":
+                    MainFrame.Navigate(new AnnounceMentPage());
+                    break;
+                    // 添加其他页面的处理
+            }
         }
     }
 }

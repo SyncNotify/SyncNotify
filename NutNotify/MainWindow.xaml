@@ -20,45 +20,40 @@
 
 
         <muxc:NavigationView
-            x:Name="nvSample9"
+            x:Name="navigationView"
             Header="即时消息："
-            PaneDisplayMode="Left"
-            SelectionChanged="nvSample9_SelectionChanged">
+            ItemInvoked="navigationView_ItemInvoked"
+            PaneDisplayMode="Left">
             <muxc:NavigationView.MenuItems>
-                <muxc:NavigationViewItem Content="即时消息" Tag="SamplePage1">
+                <muxc:NavigationViewItem Content="即时消息" Tag="realTimeMessage">
                     <muxc:NavigationViewItem.Icon>
                         <ui:FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xe8bd;" />
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
-                <muxc:NavigationViewItem Content="公告栏" Tag="SamplePage2">
+                <muxc:NavigationViewItem Content="公告栏" Tag="announcement">
                     <muxc:NavigationViewItem.Icon>
                         <ui:FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xe715;" />
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
-                <muxc:NavigationViewItem Content="历史消息" Tag="SamplePage3">
+                <muxc:NavigationViewItem Content="历史消息" Tag="historyMessage">
                     <muxc:NavigationViewItem.Icon>
                         <ui:FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xf738;" />
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
             </muxc:NavigationView.MenuItems>
             <muxc:NavigationView.FooterMenuItems>
-                <muxc:NavigationViewItem Content="设置" Tag="SamplePage4">
+                <muxc:NavigationViewItem Content="设置" Tag="settings">
                     <muxc:NavigationViewItem.Icon>
                         <ui:FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xe713;" />
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
-                <muxc:NavigationViewItem Content="关于" Tag="SamplePage5">
+                <muxc:NavigationViewItem Content="关于" Tag="about">
                     <muxc:NavigationViewItem.Icon>
                         <ui:FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xe946;" />
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
             </muxc:NavigationView.FooterMenuItems>
-            <TextBlock
-                x:Name="notificationTextBlock"
-                Margin="50,0"
-                FontSize="60"
-                Text="还没有消息"
-                TextWrapping="Wrap" />
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
         </muxc:NavigationView>
     </Grid>
 </Window>
