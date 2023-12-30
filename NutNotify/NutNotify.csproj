@@ -60,6 +60,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="InternalProper.cs" />
     <Compile Include="Pages\AnnounceMentPage.xaml.cs">
       <DependentUpon>AnnounceMentPage.xaml</DependentUpon>
     </Compile>

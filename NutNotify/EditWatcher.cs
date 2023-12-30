@@ -47,7 +47,6 @@ namespace NutNotify
         {
             string fileName = $"{e.Name}";
             string filePath = $"{e.FullPath}";
-
             new Thread(() => {
                 Thread.Sleep(2000);
                 // 打开文件并创建 StreamReader 对象
@@ -57,6 +56,7 @@ namespace NutNotify
 
                 // 关闭流
                 reader.Close();
+                InternalProper.RecentText = content;
                 RealTimeMessagePage.Instance.responseGetter(content);
 
             }).Start();

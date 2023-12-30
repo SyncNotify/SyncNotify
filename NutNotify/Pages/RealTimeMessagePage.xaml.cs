@@ -27,9 +27,19 @@ namespace NutNotify
             // 构造函数中为静态属性赋值
             Instance = this;
             InitializeComponent();
-            MessageBox.Show("这应该是个构造函数吧");
+            recoverText();
         }
 
+        private void recoverText()
+        {
+            if (InternalProper.RecentText != null)
+            {
+                notificationTextBlock.Dispatcher.Invoke(() =>
+                {
+                    notificationTextBlock.Text = InternalProper.RecentText;
+                });
+            }
+        }
 
         public void responseGetter(string value)
         {

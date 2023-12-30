@@ -21,7 +21,6 @@
 
         <muxc:NavigationView
             x:Name="navigationView"
-            Header="即时消息："
             ItemInvoked="navigationView_ItemInvoked"
             PaneDisplayMode="Left">
             <muxc:NavigationView.MenuItems>
