@@ -1,4 +1,6 @@
-﻿using Microsoft.Toolkit.Uwp.Notifications;
+﻿using iNKORE.UI.WPF.Modern.Common;
+using iNKORE.UI.WPF.Modern.Controls;
+using Microsoft.Toolkit.Uwp.Notifications;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -124,6 +126,12 @@ namespace NutNotify
                    .AddText("打开主界面查看")
                    .AddAudio(new Uri(Environment.GetEnvironmentVariable("SYSTEMROOT") + "\\Media\\Windows Ding.wav") )
                    .Show();
+        }
+        public event TypedEventHandler<NavigationView, NavigationViewSelectionChangedEventArgs> SelectionChanged;
+
+        private void nvSample9_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+
         }
     }
 }

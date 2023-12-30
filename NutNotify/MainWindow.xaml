@@ -5,21 +5,60 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:NutNotify"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="clr-namespace:iNKORE.UI.WPF.Modern.Controls;assembly=iNKORE.UI.WPF.Modern.Controls"
     xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
-    Title="NutNotify Ver0.1.0"
-    Width="800"
-    Height="450"
-    
+    Title="NutNotify Ver0.2.0 (2024新年快乐！)"
+    Width="1100"
+    Height="750"
+    ui:ThemeManager.IsThemeAware="True"
+    ui:TitleBar.IsBackButtonVisible="False"
     Topmost="True"
     Visibility="{Binding mainWindowVisibility}"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
-        <TextBlock
-            x:Name="notificationTextBlock"
-            FontSize="60"
-            Text="暂无消息"
-            TextWrapping="Wrap" />
-        <ui:ToggleSwitch />
+
+
+        <muxc:NavigationView
+            x:Name="nvSample9"
+            Header="即时消息："
+            PaneDisplayMode="Left"
+            SelectionChanged="nvSample9_SelectionChanged">
+            <muxc:NavigationView.MenuItems>
+                <muxc:NavigationViewItem Content="即时消息" Tag="SamplePage1">
+                    <muxc:NavigationViewItem.Icon>
+                        <ui:FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xe8bd;" />
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+                <muxc:NavigationViewItem Content="公告栏" Tag="SamplePage2">
+                    <muxc:NavigationViewItem.Icon>
+                        <ui:FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xe715;" />
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+                <muxc:NavigationViewItem Content="历史消息" Tag="SamplePage3">
+                    <muxc:NavigationViewItem.Icon>
+                        <ui:FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xf738;" />
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+            </muxc:NavigationView.MenuItems>
+            <muxc:NavigationView.FooterMenuItems>
+                <muxc:NavigationViewItem Content="设置" Tag="SamplePage4">
+                    <muxc:NavigationViewItem.Icon>
+                        <ui:FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xe713;" />
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+                <muxc:NavigationViewItem Content="关于" Tag="SamplePage5">
+                    <muxc:NavigationViewItem.Icon>
+                        <ui:FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xe946;" />
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+            </muxc:NavigationView.FooterMenuItems>
+            <TextBlock
+                x:Name="notificationTextBlock"
+                Margin="50,0"
+                FontSize="60"
+                Text="还没有消息"
+                TextWrapping="Wrap" />
+        </muxc:NavigationView>
     </Grid>
 </Window>
