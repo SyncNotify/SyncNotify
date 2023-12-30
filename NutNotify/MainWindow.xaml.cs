@@ -107,7 +107,7 @@ namespace NutNotify
         }
 
         
-        public event TypedEventHandler<NavigationView, NavigationViewSelectionChangedEventArgs> SelectionChanged;
+        
 
         private void navigationView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
