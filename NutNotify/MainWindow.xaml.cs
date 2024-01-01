@@ -22,6 +22,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MessageBox = System.Windows.MessageBox;
+using NutNotify.Pages;
 
 namespace NutNotify
 {
@@ -126,7 +127,9 @@ namespace NutNotify
                 case "announcement":
                     MainFrame.Navigate(new AnnounceMentPage());
                     break;
-                    // 添加其他页面的处理
+                case "settings":
+                    MainFrame.Navigate(new SettingsPage());
+                    break;
             }
         }
     }
