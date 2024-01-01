@@ -56,7 +56,7 @@ namespace NutNotify
 
                 // 关闭流
                 reader.Close();
-                InternalProper.RecentText = content;
+                InternalProper.RecentText = content;      
                 RealTimeMessagePage.Instance.responseGetter(content);
 
             }).Start();

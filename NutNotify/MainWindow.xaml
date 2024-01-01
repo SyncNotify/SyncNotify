@@ -7,12 +7,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:muxc="clr-namespace:iNKORE.UI.WPF.Modern.Controls;assembly=iNKORE.UI.WPF.Modern.Controls"
     xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
-    Title="NutNotify Ver0.2.0 (2024新年快乐！)"
+    Title="NutNotify Ver1.2.0 (2024新年快乐！)"
     Width="1100"
     Height="750"
     ui:ThemeManager.IsThemeAware="True"
     ui:TitleBar.IsBackButtonVisible="False"
-    Topmost="True"
     Visibility="{Binding mainWindowVisibility}"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">

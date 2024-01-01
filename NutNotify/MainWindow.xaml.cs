@@ -94,7 +94,7 @@ namespace NutNotify
             watcher.init();
 
             AutoUpdater.AppCastURL = "https://raw.gitmirror.com/onear233/NutNotify/master/updateInfo.xml";
-            AutoUpdater.Start();
+            AutoUpdater.Start("https://raw.gitmirror.com/onear233/NutNotify/master/updateInfo.xml");
             //_mainWindowVisibility = Visibility.Hidden;
             // 初始化默认页面
             MainFrame.Navigate(new RealTimeMessagePage());
