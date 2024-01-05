@@ -1,0 +1,159 @@
+﻿<Page
+    x:Class="NutNotify.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:NutNotify"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
+    xmlns:ui1="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows"
+    Title="AboutPage"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer>
+            <!--  最外面的StackPanel是为了让整个布局程从上到下排列  -->
+            <StackPanel>
+                <!--  “关于本应用”的panel  -->
+                <!--  Vertical-垂直；Horizontal-水平  -->
+                <StackPanel>
+                    <TextBlock
+                        x:Name="notificationTextBlock"
+                        Margin="55,15,0,0"
+                        FontSize="25"
+                        FontWeight="Bold"
+                        Text="关于此应用"
+                        TextWrapping="Wrap" />
+                </StackPanel>
+                <StackPanel
+                    Margin="0,25,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Orientation="Horizontal">
+                    <Image
+                        Width="40"
+                        Height="40"
+                        Margin="55,0,0,0"
+                        Source="/favicon.ico" />
+                    <TextBlock
+                        Margin="10,0,0,0"
+                        VerticalAlignment="Center"
+                        FontSize="28"
+                        Text="NutNotify" />
+
+                </StackPanel>
+
+
+                <Expander
+                    x:Name="Expander_OpenSource_Information"
+                    Margin="50,15,0,0"
+                    IsExpanded="True"
+                    Style="{StaticResource {x:Static ui:ThemeKeys.ExpanderCardStyleKey}}">
+                    <Expander.Header>
+                        <Grid Margin="0,10,-10,10" VerticalAlignment="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <!--  图标区的Column  -->
+                                <ColumnDefinition Width="Auto" />
+                                <!--  文字说明区的Column  -->
+                                <ColumnDefinition Width="300" />
+                                <!--  操作区域（按钮等）的Column  -->
+                                <ColumnDefinition Width="200" />
+                            </Grid.ColumnDefinitions>
+                            <ui:FontIcon
+                                Grid.RowSpan="2"
+                                Margin="5,15,20,15"
+                                FontSize="20"
+                                Glyph="{x:Static ui:SegoeIcons.Code}" />
+                            <TextBlock
+                                x:Name="TextBlock_Open_Resource"
+                                Grid.Column="1"
+                                Margin="0,0,0,2"
+                                VerticalAlignment="Bottom"
+                                Text="开源项目引用" />
+
+                        </Grid>
+                    </Expander.Header>
+
+                    <Grid Margin="5,0,5,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0">
+                            <ui:HyperlinkButton NavigateUri="https://github.com/InkoreStudios/UI.WPF.Modern">InkoreStudios/UI.WPF.Modern</ui:HyperlinkButton>
+                        </Label>
+                        <Label Grid.Row="1">
+                            <ui:HyperlinkButton NavigateUri="https://github.com/ravibpatel/AutoUpdater.NET">ravibpatel/AutoUpdater.NET</ui:HyperlinkButton>
+                        </Label>
+
+
+                    </Grid>
+
+                </Expander>
+                <Expander
+                    x:Name="Expander_Detailed_Information"
+                    Margin="50,15,0,0"
+                    IsExpanded="True"
+                    Style="{StaticResource {x:Static ui:ThemeKeys.ExpanderCardStyleKey}}">
+                    <Expander.Header>
+                        <Grid Margin="0,10,-10,10" VerticalAlignment="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <!--  图标区的Column  -->
+                                <ColumnDefinition Width="Auto" />
+                                <!--  文字说明区的Column  -->
+                                <ColumnDefinition Width="300" />
+                                <!--  操作区域（按钮等）的Column  -->
+                                <ColumnDefinition Width="200" />
+                            </Grid.ColumnDefinitions>
+                            <ui:FontIcon
+                                Grid.RowSpan="2"
+                                Margin="5,15,20,15"
+                                FontSize="20"
+                                Glyph="{x:Static ui:SegoeIcons.Info}" />
+                            <TextBlock
+                                x:Name="TextBlock_Auto_Startup"
+                                Grid.Column="1"
+                                Margin="0,0,0,2"
+                                VerticalAlignment="Bottom"
+                                Text="详细信息" />
+
+                        </Grid>
+                    </Expander.Header>
+
+                    <Grid Margin="5,0,5,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" /> 
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <StackPanel x:Name="StackPanel_Version" Orientation="Horizontal">
+                            <TextBlock x:Name="TextBlock_Version" Text="目前版本：" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,18"/>
+                            <TextBlock x:Name="TextBlock_Version_Number" Text="" Grid.Column="2" VerticalAlignment="Bottom" Margin="0,0,0,18"/>
+                        </StackPanel>
+                        <StackPanel x:Name="StackPanel_Developer" Orientation="Horizontal" Grid.Row="1">
+                            <TextBlock x:Name="TextBlock_Developer" FontFamily="Microsoft Yahei UI" Text="开发者：" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,7"/>
+                            <Label Grid.Row="1">
+                                <ui:HyperlinkButton NavigateUri="https://github.com/ravibpatel/AutoUpdater.NET">ravibpatel/AutoUpdater.NET</ui:HyperlinkButton>
+                            </Label>
+                        </StackPanel>
+
+
+                    </Grid>
+
+                </Expander>
+            </StackPanel>
+
+        </ScrollViewer>
+
+    </Grid>
+</Page>

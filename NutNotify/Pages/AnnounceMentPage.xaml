@@ -13,10 +13,6 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="15*" />
-        </Grid.RowDefinitions>
 
         <TextBlock
             x:Name="notificationTextBlock"
@@ -27,7 +23,7 @@
             TextWrapping="Wrap" />
         <StackPanel Grid.Row="2">
             <TextBlock
-                Margin="55,5,0,0"
+                Margin="55,80,0,0"
                 FontSize="15"
                 Text="还没写好~" />
 

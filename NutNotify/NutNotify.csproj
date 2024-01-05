@@ -98,6 +98,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="InternalProper.cs" />
     <Compile Include="Pages\AnnounceMentPage.xaml.cs">
       <DependentUpon>AnnounceMentPage.xaml</DependentUpon>
@@ -105,6 +108,10 @@
     <Compile Include="Pages\RealTimeMessagePage.xaml.cs">
       <DependentUpon>RealTimeMessagePage.xaml</DependentUpon>
     </Compile>
+    <Page Include="AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AnnounceMentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

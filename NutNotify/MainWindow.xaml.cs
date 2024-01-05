@@ -182,6 +182,9 @@ namespace NutNotify
                 case "settings":
                     MainFrame.Navigate(new SettingsPage());
                     break;
+                case "about":
+                    MainFrame.Navigate(new AboutPage());
+                    break;
             }
         }
     }
