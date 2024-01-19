@@ -85,7 +85,7 @@
                             FontSize="20"
                             Glyph="{x:Static ui:SegoeIcons.OpenFile}" />
                         <TextBlock
-                            x:Name="TextBlock_Open_Resource"
+                            x:Name="TextBlock_Open_Resource" 
                             Grid.Column="1"
                             Margin="0,0,0,2"
                             VerticalAlignment="Center"
