@@ -13,87 +13,93 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Expander
-            x:Name="Expander_Language"
-            IsExpanded="True"
-            Style="{StaticResource {x:Static ui:ThemeKeys.ExpanderCardStyleKey}}">
-            <Expander.Header>
-                <Grid Margin="0,10,-10,10" VerticalAlignment="Center">
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="300" />
-                        <ColumnDefinition Width="200" />
-                    </Grid.ColumnDefinitions>
-                    <ui:FontIcon
-                        Grid.RowSpan="2"
-                        Margin="5,15,20,15"
-                        FontSize="20"
-                        Glyph="{x:Static ui:SegoeIcons.LocaleLanguage}" />
+        <ScrollViewer>
+            <!--  最外面的StackPanel是为了让整个布局程从上到下排列  -->
+            <StackPanel>
+                <!--  “关于本应用”的panel  -->
+                <!--  Vertical-垂直；Horizontal-水平  -->
+                <StackPanel>
                     <TextBlock
-                        x:Name="TextBlock_Auto_Startup"
-                        Grid.Column="1"
-                        Margin="0,0,0,2"
-                        VerticalAlignment="Bottom"
-                        Text="自启动" />
-                    <TextBlock
-                        x:Name="TextBlock_Auto_Startup_Description"
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        Margin="0,2,20,5"
-                        VerticalAlignment="Top"
-                        FontSize="12"
-                        Opacity="0.615"
-                        Text="开机时自动启动"
-                        TextTrimming="CharacterEllipsis"
-                        TextWrapping="WrapWithOverflow" />
+                        x:Name="notificationTextBlock"
+                        Margin="55,15,0,10"
+                        FontSize="25"
+                        FontWeight="Bold"
+                        Text="设置"
+                        TextWrapping="Wrap" />
+                </StackPanel>
+                <Border
+                    Width="615"
+                    Margin="55,5,0,0"
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource Style_SectionBorderStyle}">
+                    <Grid Margin="0,10,-10,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <!--  图标区的Column  -->
+                            <ColumnDefinition Width="Auto" />
+                            <!--  文字说明区的Column  -->
+                            <ColumnDefinition Width="300" />
+                            <!--  操作区域（按钮等）的Column  -->
+                            <ColumnDefinition Width="270" />
+                        </Grid.ColumnDefinitions>
+                        <ui:FontIcon
+                            Grid.RowSpan="2"
+                            Margin="5,15,20,15"
+                            FontSize="20"
+                            Glyph="{x:Static ui:SegoeIcons.OpenFile}" />
+                        <TextBlock
+                            x:Name="TextBlock_Auto_Start"
+                            Grid.Column="1"
+                            Margin="0,0,0,2"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource ResourceKey=Style_SectionHeadlineStyle}"
+                            Text="开机自动启动" />
+                        <ui:ToggleSwitch
+                            Grid.Column="2"
+                            Width="106"
+                            Margin="165,0,0,0" />
+                    </Grid>
+                </Border>
+                <Border
+                    Width="615"
+                    Margin="55,5,0,0"
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource Style_SectionBorderStyle}">
+                    <Grid Margin="0,10,-10,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <!--  图标区的Column  -->
+                            <ColumnDefinition Width="Auto" />
+                            <!--  文字说明区的Column  -->
+                            <ColumnDefinition Width="300" />
+                            <!--  操作区域（按钮等）的Column  -->
+                            <ColumnDefinition Width="270" />
+                        </Grid.ColumnDefinitions>
+                        <ui:FontIcon
+                            Grid.RowSpan="2"
+                            Margin="5,15,20,15"
+                            FontSize="20"
+                            Glyph="{x:Static ui:SegoeIcons.OpenFile}" />
+                        <TextBlock
+                            x:Name="TextBlock_Open_Resource"
+                            Grid.Column="1"
+                            Margin="0,0,0,2"
+                            VerticalAlignment="Center"
+                            Style="{StaticResource ResourceKey=Style_SectionHeadlineStyle}"
+                            Text="默认自动打开窗口" />
+                        <ui:ToggleSwitch
+                            Grid.Column="2"
+                            Width="106"
+                            Margin="165,0,0,0" />
+                    </Grid>
+                </Border>
+            </StackPanel>
 
-                    <ui:ToggleSwitch
-                        x:Name="ToggleSwitch_Auto_Startup"
-                        Grid.RowSpan="2"
-                        Grid.Column="2"
-                        MinWidth="25"
-                        HorizontalAlignment="Right" />
-                </Grid>
-            </Expander.Header>
-
-            <Grid Margin="5,0,5,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
-                <TextBlock
-                    x:Name="TextBlock_Language_Author"
-                    Margin="0,5,0,5"
-                    Text="M_AUTHOR" />
-                <TextBlock
-                    x:Name="TextBlock_Language_Version"
-                    Grid.Row="1"
-                    Margin="0,5,0,5"
-                    Text="M_VERSION" />
-
-                <TextBlock
-                    x:Name="TextBlock_Language_Author_Value"
-                    Grid.Column="1"
-                    Margin="0,5,0,5"
-                    Text="M_AUTHOR" />
-                <TextBlock
-                    x:Name="TextBlock_Language_Version_Value"
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    Margin="0,5,0,5"
-                    Text="M_VERSION" />
-
-            </Grid>
-
-        </Expander>
+        </ScrollViewer>
 
 
         <!--<Expander x:Name="Expander_Language" IsExpanded="True" Style="{StaticResource {x:Static ui:ThemeKeys.ExpanderCardStyleKey}}">
