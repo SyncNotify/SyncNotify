@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EEAB5C78-1ED2-47D7-B453-4E19D4758665}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>NutNotify</RootNamespace>
-    <AssemblyName>NutNotify</AssemblyName>
+    <RootNamespace>SyncNotify</RootNamespace>
+    <AssemblyName>SyncNotify</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

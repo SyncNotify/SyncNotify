@@ -1,9 +1,9 @@
 ﻿<Page
-    x:Class="NutNotify.Pages.SettingsPage"
+    x:Class="SyncNotify.Pages.SettingsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:NutNotify.Pages"
+    xmlns:local="clr-namespace:SyncNotify.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
     xmlns:ui1="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows"

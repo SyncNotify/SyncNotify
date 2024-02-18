@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NutNotify.Pages
+namespace SyncNotify.Pages
 {
     /// <summary>
     /// SettingsPage.xaml 的交互逻辑

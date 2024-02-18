@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace NutNotify
+namespace SyncNotify
 {
     internal class InternalProper
     {

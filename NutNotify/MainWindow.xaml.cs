@@ -22,10 +22,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MessageBox = System.Windows.MessageBox;
-using NutNotify.Pages;
+using SyncNotify.Pages;
 using System.Windows.Forms;
 
-namespace NutNotify
+namespace SyncNotify
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
@@ -96,7 +96,7 @@ namespace NutNotify
             EditWatcher watcher = new EditWatcher();
             watcher.init();
             showNotifyIcon();
-            AutoUpdater.Start("https://raw.gitmirror.com/onear233/NutNotify/master/updateInfo.xml");
+            AutoUpdater.Start("https://raw.gitmirror.com/onear233/SyncNotify/master/updateInfo.xml");
             //_mainWindowVisibility = Visibility.Hidden;
             // 初始化默认页面
             MainFrame.Navigate(new RealTimeMessagePage());
@@ -108,7 +108,7 @@ namespace NutNotify
         private void showNotifyIcon()
         {
             this.notifyIcon = new NotifyIcon();
-            this.notifyIcon.Text = "NutNotify";
+            this.notifyIcon.Text = "SyncNotify";
             this.notifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
             this.notifyIcon.Visible = true;
             //打开菜单项

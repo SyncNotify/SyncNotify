@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace NutNotify
+namespace SyncNotify
 {
     internal class EditWatcher
     {
