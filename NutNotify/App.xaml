@@ -1,15 +1,16 @@
-﻿<Application x:Class="NutNotify.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:NutNotify"
-             StartupUri="MainWindow.xaml"
-             xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern">
+﻿<Application
+    x:Class="NutNotify.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:NutNotify"
+    xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
+    StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ui:ThemeResources/>
+                <ui:ThemeResources />
                 <ui:XamlControlsResources />
-                <ResourceDictionary Source="/NutNotify;component/Style/SectionStyle.xaml"/>
+                <ResourceDictionary Source="/NutNotify;component/Style/SectionStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
