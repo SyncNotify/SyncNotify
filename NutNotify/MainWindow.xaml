@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:muxc="clr-namespace:iNKORE.UI.WPF.Modern.Controls;assembly=iNKORE.UI.WPF.Modern.Controls"
     xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
-    Title="SyncNotify Ver1.0.2-alpha3-240102 (2024新年快乐！)"
+    Title="SyncNotify Ver1.0.2-alpha3-240323"
     Width="1100"
     Height="750"
     ui:ThemeManager.IsThemeAware="True"

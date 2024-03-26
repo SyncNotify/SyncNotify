@@ -126,7 +126,7 @@
                             Margin="0"
                             VerticalAlignment="Bottom"
                             Style="{StaticResource ResourceKey=Style_SectionHeadlineStyle}"
-                            Text="默认自动打开窗口" />
+                            Text="监听文件夹配置选项" />
                         <TextBlock
                             x:Name="TextBlock_ThemeMode_Description"
                             Grid.Row="1"
@@ -135,7 +135,7 @@
                             VerticalAlignment="Top"
                             FontSize="12"
                             Opacity="0.615"
-                            Text="编辑监听的文件夹及"
+                            Text="编辑监听的文件夹及自动创建文件夹"
                             TextTrimming="CharacterEllipsis"
                             TextWrapping="WrapWithOverflow" />
                         <Button

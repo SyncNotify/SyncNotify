@@ -24,6 +24,7 @@ using System.Windows.Shapes;
 using MessageBox = System.Windows.MessageBox;
 using SyncNotify.Pages;
 using System.Windows.Forms;
+using SyncNotify.Pages.DiaglogPages;
 
 namespace SyncNotify
 {
@@ -100,7 +101,7 @@ namespace SyncNotify
             //_mainWindowVisibility = Visibility.Hidden;
             // 初始化默认页面
             MainFrame.Navigate(new RealTimeMessagePage());
-
+            Title = "SyncNotify" + InternalProper.getVersion();
             //测试用
             //Visibility = Visibility.Hidden;
         }
@@ -184,6 +185,9 @@ namespace SyncNotify
                     break;
                 case "about":
                     MainFrame.Navigate(new AboutPage());
+                    break;
+                case "historyMessage":
+                    MainFrame.Navigate(new HistoryPage());
                     break;
             }
         }
