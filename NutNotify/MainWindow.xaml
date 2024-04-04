@@ -7,11 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:muxc="clr-namespace:iNKORE.UI.WPF.Modern.Controls;assembly=iNKORE.UI.WPF.Modern.Controls"
     xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
-    Title="SyncNotify Ver1.0.2-alpha3-240323"
+    
     Width="1100"
     Height="750"
     ui:ThemeManager.IsThemeAware="True"
     ui:TitleBar.IsBackButtonVisible="False"
+         ui:TitleBar.ExtendViewIntoTitleBar="True"  
+    ui:WindowHelper.FixMaximizedWindow="False"
+     ui:WindowHelper.UseModernWindowStyle="True"
     Visibility="{Binding mainWindowVisibility}"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
@@ -23,7 +26,7 @@
             ItemInvoked="navigationView_ItemInvoked"
             PaneDisplayMode="Left">
             <muxc:NavigationView.MenuItems>
-                <muxc:NavigationViewItem Content="即时消息" Tag="realTimeMessage">
+                <muxc:NavigationViewItem Content="即时消息" Tag="realTimeMessage" IsSelected="True">
                     <muxc:NavigationViewItem.Icon>
                         <ui:FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xe8bd;" />
                     </muxc:NavigationViewItem.Icon>
@@ -51,7 +54,7 @@
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
             </muxc:NavigationView.FooterMenuItems>
-            <ui:Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+            <ui:Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
         </muxc:NavigationView>
     </Grid>
 </Window>

@@ -101,9 +101,10 @@ namespace SyncNotify
             //_mainWindowVisibility = Visibility.Hidden;
             // 初始化默认页面
             MainFrame.Navigate(new RealTimeMessagePage());
-            Title = "SyncNotify" + InternalProper.getVersion();
+            Title = "SyncNotify" + " " + InternalProper.getVersion();
             //测试用
             //Visibility = Visibility.Hidden;
+
         }
 
         private void showNotifyIcon()
