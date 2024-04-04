@@ -11,11 +11,13 @@ namespace SyncNotify
 {
     internal class EditWatcher
     {
+        public static Settings Settings = new Settings();
+        public static string settingsFileName = "Settings.json";
         public static string content;
         public void init()
         {
             //监听路径
-            FileSystemWatcher watcher = new FileSystemWatcher(@"D:\sync\通知");
+            FileSystemWatcher watcher = new FileSystemWatcher(Settings.General.FolderLocation);
             watcher.IncludeSubdirectories = true;
             watcher.EnableRaisingEvents = true;
             //设置监听的属性

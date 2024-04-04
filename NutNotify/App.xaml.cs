@@ -17,7 +17,7 @@ namespace SyncNotify
     {
         System.Threading.Mutex mutex;
         public static string[] StartArgs = null;
-        public static string RootPath = Environment.GetEnvironmentVariable("APPDATA") + "\\Ink Canvas\\";
+        public static string RootPath = Environment.GetEnvironmentVariable("APPDATA") + "\\SyncNotify\\";
         public App()
         {
             this.Startup += new StartupEventHandler(App_Startup);

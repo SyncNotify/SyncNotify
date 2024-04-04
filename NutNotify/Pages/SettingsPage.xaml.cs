@@ -20,9 +20,17 @@ namespace SyncNotify.Pages
     /// </summary>
     public partial class SettingsPage : Page
     {
+        public static Settings Settings = new Settings();
+
         public SettingsPage()
         {
             InitializeComponent();
+        }
+
+        private void Auto_Startup_Toggle(object sender, RoutedEventArgs e)
+        {
+            Settings.General.AutoStartup = AutoStartup_Toggle.IsOn;
+            SettingsManager.SaveSettingsToFile(Settings);
         }
     }
 }
