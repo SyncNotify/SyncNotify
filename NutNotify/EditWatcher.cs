@@ -55,13 +55,21 @@ namespace SyncNotify
                 StreamReader reader = new StreamReader(filePath);
                 // 读取文件内容
                 content = reader.ReadToEnd();
-
                 // 关闭流
                 reader.Close();
-                InternalProper.RecentText = content;      
-                RealTimeMessagePage.Instance.responseGetter(content);
+                InternalProper.RecentText = content;
+                //RealTimeMessagePage.Instance.responseGetter(content);
 
+
+                //对file进行属性设置
+                NotificationFileManager notificationFileManager = new NotificationFileManager();
+                SyncNotify.File file = new File();
+                file.FileName = fileName;
+                file.FileContent = content;
+                file.FileCreationDate = notificationFileManager.getFileCreatingDate();
+                RealTimeMessagePage.Instance.refeshMessage(file);
             }).Start();
+
 
 
 

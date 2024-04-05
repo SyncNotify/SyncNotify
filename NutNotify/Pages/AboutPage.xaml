@@ -139,20 +139,30 @@
 
                     <Grid Margin="5,0,5,0">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" /> 
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <StackPanel x:Name="StackPanel_Version" Orientation="Horizontal">
-                            <TextBlock x:Name="TextBlock_Version" Text="目前版本：" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,18"/>
-                            <TextBlock x:Name="TextBlock_Version_Number" Text="" Grid.Column="2" VerticalAlignment="Bottom" Margin="0,0,0,18"/>
+                        <StackPanel x:Name="StackPanel_Version" Orientation="Horizontal" Grid.Row="0">
+                            <TextBlock x:Name="TextBlock_Version" Text="目前版本：" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,7"/>
+                            <TextBlock x:Name="TextBlock_Version_Number" Text="" Grid.Column="2" VerticalAlignment="Bottom" Margin="0,0,0,7"/>
                         </StackPanel>
-                        <StackPanel x:Name="StackPanel_Developer" Orientation="Horizontal" Grid.Row="1">
-                            <TextBlock x:Name="TextBlock_Developer" FontFamily="Microsoft Yahei UI" Text="开发者：" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,7"/>
-                            <Label Grid.Row="1">
-                                <ui:HyperlinkButton NavigateUri="https://github.com/onear233">onear233</ui:HyperlinkButton>
-                            </Label>
+                        
+                        <!--开发者和特别感谢-->
+                        <StackPanel Grid.Row="1">
+                            <StackPanel x:Name="StackPanel_Developer" Orientation="Horizontal" Grid.Row="1">
+                                <TextBlock x:Name="TextBlock_Developer" FontFamily="Microsoft Yahei UI" Text="开发者：" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,7"/>
+                                <Label>
+                                    <ui:HyperlinkButton NavigateUri="https://github.com/onear233">onear233</ui:HyperlinkButton>
+                                </Label>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock x:Name="TextBlock_ThanksFor" FontFamily="Microsoft Yahei UI" Text="特别感谢：" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,7"/>
+                                <Label>
+                                    <ui:HyperlinkButton NavigateUri="https://github.com/NotYoojun">NotYoojun</ui:HyperlinkButton>
+                                </Label>
+                            </StackPanel>
                         </StackPanel>
+                        
 
 
                     </Grid>

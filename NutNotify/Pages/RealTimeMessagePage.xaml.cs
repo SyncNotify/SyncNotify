@@ -1,4 +1,5 @@
 ﻿using Microsoft.Toolkit.Uwp.Notifications;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,7 @@ namespace SyncNotify
     public partial class RealTimeMessagePage : Page
     {
         public static RealTimeMessagePage Instance { get; private set; }
+        private File savedFile;
         public RealTimeMessagePage()
         {
             // 构造函数中为静态属性赋值
@@ -41,14 +43,21 @@ namespace SyncNotify
             }
         }
 
-        public void responseGetter(string value)
+        //刷新消息用，由别的类来通知来消息，然后根据File里的东西进行刷新
+        public void refeshMessage(SyncNotify.File file)
         {
-            //_mainWindowVisibility = Visibility.Visible;
-
+            savedFile = file;
             notificationTextBlock.Dispatcher.Invoke(() =>
             {
-                notificationTextBlock.Text = value;
+                notificationTextBlock.Text = savedFile.FileContent;
+                Send_Time_TextBlock.Text = savedFile.FileCreationDate;
+                Display_Time_TextBlock.Text = savedFile.FileCreationDate;
             });
+            popUp();
+        }
+
+        private void popUp()
+        {
             MainWindow.Instance.Dispatcher.Invoke(() =>
             {
 
@@ -61,8 +70,7 @@ namespace SyncNotify
                    .AddArgument("action", "viewConversation")
                    .AddArgument("conversationId", 9813)
                    .AddText("您有一条新消息")
-                   .AddText("打开主界面查看")
-                   .AddAudio(new Uri(Environment.GetEnvironmentVariable("SYSTEMROOT") + "\\Media\\Windows Ding.wav"))
+                   .AddText(savedFile.FileContent)
                    .Show();
         }
     }

@@ -9,7 +9,7 @@ namespace SyncNotify
 {
     internal class NotificationFileManager
     {
-        public static void getFileName(StreamWriter sw, string path, int indent)
+        public void getFileName(StreamWriter sw, string path, int indent)
         {
             //做历史消息用 遍历所有文件（预计后面加个刷新啥的 文件太多了还是不好）
             DirectoryInfo root = new DirectoryInfo(path);
@@ -21,6 +21,13 @@ namespace SyncNotify
                 }
                 sw.WriteLine(f.Name);
             }
+        }
+
+        public string getFileCreatingDate()
+        {
+            DateTime dt = DateTime.Now;
+            string time = dt.ToString("yyyy-MM-dd HH:mm:ss");
+            return time;
         }
     }
 }
