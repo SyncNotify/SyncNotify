@@ -28,18 +28,21 @@ namespace SyncNotify
             catch { }
         }
 
-        //public static bool GetSettingsByFile(string jsonLocation)
-        //{
-        //    // 打开文件并创建 StreamReader 对象
-        //    StreamReader reader = new StreamReader(jsonLocation);
-        //    // 读取文件内容
-        //    jsonLocation = reader.ReadToEnd();
-        //    JsonConvert.DeserializeObject(jsonLocation);
-
-        //    JsonSerializerSettings jsetting = new JsonSerializerSettings();
-        //    jsetting.ContractResolver = new LimitPropsContractResolver(new string[] { "Age", "IsMarry" });
-        //    Console.WriteLine(JsonConvert.SerializeObject(p, Formatting.Indented, jsetting));
-        //}
+        public static Settings GetSettingsByFile(string settingsFileName,Settings settings)
+        {
+            if (System.IO.File.Exists(App.RootPath + settingsFileName))
+            {
+                
+                    string text = System.IO.File.ReadAllText(App.RootPath + settingsFileName);
+                    settings = JsonConvert.DeserializeObject<Settings>(text);
+                    return settings;
+            }
+            else
+            {
+                return null;
+            }
+            
+        }
     }
 
     //public class LimitPropsContractResolver : DefaultContractResolver

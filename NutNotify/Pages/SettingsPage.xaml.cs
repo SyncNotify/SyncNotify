@@ -25,7 +25,7 @@ namespace SyncNotify.Pages
     //关于xaml中的文件：可以把schemas.inkore.net设置为默认命名空间，这样子组件库的组件就不要前缀，但是wpf默认的东西就要前缀了
     public partial class SettingsPage : iNKORE.UI.WPF.Modern.Controls.Page
     {
-        public static Settings Settings = new Settings();
+        public static Settings settings = new Settings();
 
         public SettingsPage()
         {
@@ -35,16 +35,21 @@ namespace SyncNotify.Pages
 
         private void restoreSettings()
         {
+            //把本页面的settings对象进行赋值
+            settings = SettingsManager.GetSettingsByFile(Settings.settingsFileName, settings);
+            //读取属性
+            if (settings != null)
+            {
+                AutoStartup_Toggle.IsOn = settings.General.AutoStartup;
 
-            //AutoStartup_Toggle.IsOn = SettingsManager.GetSettingsByFile(App.RootPath + Settings.settingsFileName);
+            }
         }
 
         private void Auto_Startup_Toggle(object sender, RoutedEventArgs e)
         {
-            Settings.General.AutoStartup = AutoStartup_Toggle.IsOn;
-            SettingsManager.SaveSettingsToFile(Settings);
+            settings.General.AutoStartup = AutoStartup_Toggle.IsOn;
+            SettingsManager.SaveSettingsToFile(settings);
             AutoStartupHelper helper = new AutoStartupHelper();
-
             if (AutoStartup_Toggle.IsOn)
             {
                 helper.StartAutomaticallyCreate(Application.ResourceAssembly.GetName().Version.ToString() + ".exe");
@@ -53,7 +58,7 @@ namespace SyncNotify.Pages
             {
                 helper.StartAutomaticallyDel(Application.ResourceAssembly.GetName().Version.ToString() + ".exe");
             }
-            
+
         }
 
     }
