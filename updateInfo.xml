@@ -2,6 +2,7 @@
 <item>
 	<version>1.4.0.1</version>
 	<url>https://gitee.com/onear/ys/releases/download/v1.4.0-alpha1/v1.4.0-alpha1.zip</url>
+	<changelog>https://gitee.com/onear/ys/raw/master/1.4.0.1.txt</changelog>
 	<mandatory>false</mandatory>
 </item>
 
