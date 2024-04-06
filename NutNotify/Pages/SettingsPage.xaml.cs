@@ -36,7 +36,7 @@ namespace SyncNotify.Pages
         private void restoreSettings()
         {
 
-            AutoStartup_Toggle.IsOn = SettingsManager.GetSettingsByFile(App.RootPath + Settings.settingsFileName);
+            //AutoStartup_Toggle.IsOn = SettingsManager.GetSettingsByFile(App.RootPath + Settings.settingsFileName);
         }
 
         private void Auto_Startup_Toggle(object sender, RoutedEventArgs e)
