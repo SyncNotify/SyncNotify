@@ -97,7 +97,7 @@ namespace SyncNotify
             EditWatcher watcher = new EditWatcher();
             watcher.init();
             showNotifyIcon();
-            AutoUpdater.Start("https://raw.gitmirror.com/onear233/SyncNotify/master/updateInfo.xml");
+            AutoUpdater.Start("https://cdn.githubraw.com/onear233/SyncNotify/master/updateInfo.xml");
             //_mainWindowVisibility = Visibility.Hidden;
             // 初始化默认页面
             MainFrame.Navigate(new RealTimeMessagePage());
