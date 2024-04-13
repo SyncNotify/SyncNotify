@@ -1,4 +1,5 @@
 ﻿using IWshRuntimeLibrary;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,8 +30,6 @@ namespace SyncNotify
                 shortcut.WindowStyle = 7;
                 //快捷方式的描述
                 shortcut.Description = exeName;
-                //设置快捷键(如果有必要的话.)
-                //shortcut.Hotkey = "CTRL+ALT+D";
                 shortcut.Save();
                 return true;
             }

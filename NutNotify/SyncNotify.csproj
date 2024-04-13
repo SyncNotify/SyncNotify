@@ -98,13 +98,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AutoStartupHelper.cs" />
+    <Compile Include="Helper\AutoStartupHelper.cs" />
     <Compile Include="File.cs" />
-    <Compile Include="NotificationFileManager.cs" />
+    <Compile Include="Helper\FileSelectHelper.cs" />
+    <Compile Include="Helper\NotificationFileManager.cs" />
     <Compile Include="Pages\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ExitDialog.cs" />
     <Compile Include="InternalProper.cs" />
     <Compile Include="Pages\AnnounceMentPage.xaml.cs">
       <DependentUpon>AnnounceMentPage.xaml</DependentUpon>
@@ -119,7 +119,7 @@
       <DependentUpon>RealTimeMessagePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="SettingsManager.cs" />
+    <Compile Include="Helper\SettingsManager.cs" />
     <Page Include="Pages\AboutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -136,7 +136,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="EditWatcher.cs" />
+    <Compile Include="Helper\EditWatcher.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

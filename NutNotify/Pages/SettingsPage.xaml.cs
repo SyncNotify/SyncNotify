@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SyncNotify.Helper;
 
 namespace SyncNotify.Pages
 {
@@ -41,7 +42,6 @@ namespace SyncNotify.Pages
             if (settings != null)
             {
                 AutoStartup_Toggle.IsOn = settings.General.AutoStartup;
-
             }
         }
 
@@ -61,5 +61,14 @@ namespace SyncNotify.Pages
 
         }
 
+        private void ComboBoxItem_FileSelect_Selected(object sender, RoutedEventArgs e)
+        {
+            FileSelectHelper fileSelectHelper = new FileSelectHelper();
+            string filePath = fileSelectHelper.getFilePath();
+            string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
+            ComboboxItem_SelectFile.Content = fileName;
+            SettingsManager settingsManager = new SettingsManager();
+            settings.Message.MessageArrivalSound = filePath;
+        }
     }
 }
