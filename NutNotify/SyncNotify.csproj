@@ -109,6 +109,9 @@
     <Compile Include="Pages\AnnounceMentPage.xaml.cs">
       <DependentUpon>AnnounceMentPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ComingSoonPage.xaml.cs">
+      <DependentUpon>ComingSoonPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DiaglogPages\ExitDialog.xaml.cs">
       <DependentUpon>ExitDialog.xaml</DependentUpon>
     </Compile>
@@ -141,6 +144,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\ComingSoonPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\DiaglogPages\ExitDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

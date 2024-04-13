@@ -179,7 +179,7 @@ namespace SyncNotify
                     MainFrame.Navigate(new RealTimeMessagePage());
                     break;
                 case "announcement":
-                    MainFrame.Navigate(new AnnounceMentPage());
+                    MainFrame.Navigate(new ComingSoon());
                     break;
                 case "settings":
                     MainFrame.Navigate(new SettingsPage());
@@ -188,7 +188,8 @@ namespace SyncNotify
                     MainFrame.Navigate(new AboutPage());
                     break;
                 case "historyMessage":
-                    MainFrame.Navigate(new HistoryPage());
+                    //MainFrame.Navigate(new HistoryPage());
+                    MainFrame.Navigate(new ComingSoon());
                     break;
             }
         }
