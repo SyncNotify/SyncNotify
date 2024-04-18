@@ -40,6 +40,8 @@ namespace SyncNotify
                 notificationTextBlock.Dispatcher.Invoke(() =>
                 {
                     notificationTextBlock.Text = InternalProper.RecentText;
+                    Send_Time_TextBlock.Text = InternalProper.RecentTime;
+                    Display_Time_TextBlock.Text = InternalProper.RecentTime;
                 });
             }
         }

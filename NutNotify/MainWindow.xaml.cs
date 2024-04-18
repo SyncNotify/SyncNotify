@@ -25,6 +25,7 @@ using MessageBox = System.Windows.MessageBox;
 using SyncNotify.Pages;
 using System.Windows.Forms;
 using SyncNotify.Pages.DiaglogPages;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace SyncNotify
 {
@@ -96,6 +97,7 @@ namespace SyncNotify
             Instance = this;
             EditWatcher watcher = new EditWatcher();
             watcher.init();
+            
             showNotifyIcon();
             AutoUpdater.Start("https://cdn.githubraw.com/onear233/SyncNotify/master/updateInfo.xml");
             //_mainWindowVisibility = Visibility.Hidden;
@@ -163,6 +165,13 @@ namespace SyncNotify
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
             e.Cancel = true;
+            ContentDialog dialog = new ContentDialog();
+            dialog.Title = "确定要关闭窗口？";
+            dialog.PrimaryButtonText = "转为悬浮窗";
+            dialog.SecondaryButtonText = "否";
+            dialog.DefaultButton = ContentDialogButton.Primary;
+            dialog.ShowAsync();
+            ContentDialog_TextBlock.Text = "该操作会导致消息不再弹出到所有窗口之前，可能导致消息遗漏！\r您可能要为可能造成的损失负责！\r（注意：本设置不影响消息收取，打开主面板仍能看到最新消息，且会被json消息中的“立即弹出”覆盖）";
             this.Visibility = Visibility.Hidden;
         }
         

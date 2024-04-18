@@ -19,8 +19,9 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
-
-
+        <ui:ContentDialog x:Name="ContentDialog">
+            <TextBlock x:Name="ContentDialog_TextBlock" FontSize="15"/>
+        </ui:ContentDialog>
         <muxc:NavigationView
             x:Name="navigationView"
             ItemInvoked="navigationView_ItemInvoked"

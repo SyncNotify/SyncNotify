@@ -67,6 +67,8 @@ namespace SyncNotify
                 file.FileName = fileName;
                 file.FileContent = content;
                 file.FileCreationDate = notificationFileManager.getFileCreatingDate();
+                //TODO REMOVAL IN THE FUTURE
+                InternalProper.RecentTime = file.FileCreationDate;
                 RealTimeMessagePage.Instance.refeshMessage(file);
             }).Start();
 
