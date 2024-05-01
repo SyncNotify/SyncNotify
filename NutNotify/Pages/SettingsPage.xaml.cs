@@ -1,21 +1,5 @@
-﻿using iNKORE.UI.WPF.Modern.Controls;
-using SyncNotify.Properties;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SyncNotify.Helper;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using IWshRuntimeLibrary;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using SyncNotify.Helper;
 
 namespace SyncNotify.Pages
 {
@@ -27,7 +11,6 @@ namespace SyncNotify.Pages
     public partial class SettingsPage : iNKORE.UI.WPF.Modern.Controls.Page
     {
         public static Settings settings = new Settings();
-
         public SettingsPage()
         {
             InitializeComponent();
@@ -42,13 +25,22 @@ namespace SyncNotify.Pages
             if (settings != null)
             {
                 AutoStartup_Toggle.IsOn = settings.General.AutoStartup;
+                //首先在页面加载时移除监听事件
+                ComboboxItem_SelectFile.Selected -= ComboBoxItem_FileSelect_Selected;
+                ComboboxItem_SelectFile.Content = settings.Message.MessageArrivalSound;
+                ComboboxItem_SelectFile.IsSelected = true;
+                //重新添加监听事件
+                ComboboxItem_SelectFile.Selected += ComboBoxItem_FileSelect_Selected;
+
             }
         }
 
         private void Auto_Startup_Toggle(object sender, RoutedEventArgs e)
         {
+            //保存设置到文件
             settings.General.AutoStartup = AutoStartup_Toggle.IsOn;
             SettingsManager.SaveSettingsToFile(settings);
+            //创建启动项
             AutoStartupHelper helper = new AutoStartupHelper();
             if (AutoStartup_Toggle.IsOn)
             {
@@ -61,14 +53,27 @@ namespace SyncNotify.Pages
 
         }
 
+        //Combobox的选择监听方法
         private void ComboBoxItem_FileSelect_Selected(object sender, RoutedEventArgs e)
         {
+
             FileSelectHelper fileSelectHelper = new FileSelectHelper();
-            string filePath = fileSelectHelper.getFilePath();
+            string filePath = fileSelectHelper.getFilePath("MP3文件|*.mp3|WAV文件|*.wav", "打开音频文件");
             string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
             ComboboxItem_SelectFile.Content = fileName;
-            SettingsManager settingsManager = new SettingsManager();
+            //保存设置到文件
             settings.Message.MessageArrivalSound = filePath;
+            SettingsManager.SaveSettingsToFile(settings);
+        }
+
+        private void Listen_Button_Click(object sender, RoutedEventArgs e)
+        {
+            //保存到文件
+            FileSelectHelper fileSelectHelper = new FileSelectHelper();
+            string filePath = fileSelectHelper.getFolderPath("选择要监听的文件夹（暂时只支持一个）");
+            //保存设置到文件
+            settings.General.FolderLocation = filePath;
+            SettingsManager.SaveSettingsToFile(settings);
         }
     }
 }

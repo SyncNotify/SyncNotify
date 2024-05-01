@@ -1,31 +1,10 @@
-﻿using iNKORE.UI.WPF.Modern.Common;
+﻿using AutoUpdaterDotNET;
 using iNKORE.UI.WPF.Modern.Controls;
-using Microsoft.Toolkit.Uwp.Notifications;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using AutoUpdaterDotNET;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using MessageBox = System.Windows.MessageBox;
 using SyncNotify.Pages;
+using System;
+using System.ComponentModel;
+using System.Windows;
 using System.Windows.Forms;
-using SyncNotify.Pages.DiaglogPages;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace SyncNotify
 {
@@ -97,7 +76,7 @@ namespace SyncNotify
             Instance = this;
             EditWatcher watcher = new EditWatcher();
             watcher.init();
-            
+
             showNotifyIcon();
             AutoUpdater.Start("https://cdn.githubraw.com/onear233/SyncNotify/master/updateInfo.xml");
             //_mainWindowVisibility = Visibility.Hidden;
@@ -135,9 +114,9 @@ namespace SyncNotify
 
         private void Show(object sender, EventArgs e)
         {
-            
-                this.Visibility = System.Windows.Visibility.Visible;
-                this.Activate();
+
+            this.Visibility = System.Windows.Visibility.Visible;
+            this.Activate();
         }
         protected override void OnClosed(EventArgs e)
         {
@@ -166,15 +145,14 @@ namespace SyncNotify
         {
             e.Cancel = true;
             ContentDialog dialog = new ContentDialog();
-            dialog.Title = "确定要关闭窗口？";
+            dialog.Title = "关闭窗口已被禁用";
             dialog.PrimaryButtonText = "转为悬浮窗";
-            dialog.SecondaryButtonText = "否";
+            dialog.SecondaryButtonText = "取消";
             dialog.DefaultButton = ContentDialogButton.Primary;
             dialog.ShowAsync();
-            ContentDialog_TextBlock.Text = "该操作会导致消息不再弹出到所有窗口之前，可能导致消息遗漏！\r您可能要为可能造成的损失负责！\r（注意：本设置不影响消息收取，打开主面板仍能看到最新消息，且会被json消息中的“立即弹出”覆盖）";
-            this.Visibility = Visibility.Hidden;
+            //this.Visibility = Visibility.Hidden;
         }
-        
+
 
 
         private void navigationView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)

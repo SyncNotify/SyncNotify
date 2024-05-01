@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SyncNotify.Helper
 {
     internal class FileSelectHelper
     {
-        public string getFilePath()
+        public string getFilePath(string filter, string title)
         {
             System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            openFileDialog.Filter = "MP3文件|*.mp3|WAV文件|*.wav";
+            openFileDialog.Filter = filter;
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             openFileDialog.Title = "打开音频文件";
             openFileDialog.Multiselect = false;
@@ -20,6 +15,19 @@ namespace SyncNotify.Helper
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 return openFileDialog.FileName;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public string getFolderPath(string title)
+        {
+            System.Windows.Forms.FolderBrowserDialog folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            folderBrowserDialog.Description = title;
+            if (folderBrowserDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                return folderBrowserDialog.SelectedPath;
             }
             else
             {

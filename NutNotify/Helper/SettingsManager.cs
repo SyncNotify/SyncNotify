@@ -1,12 +1,5 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace SyncNotify
 {
@@ -28,20 +21,20 @@ namespace SyncNotify
             catch { }
         }
 
-        public static Settings GetSettingsByFile(string settingsFileName,Settings settings)
+        public static Settings GetSettingsByFile(string settingsFileName, Settings settings)
         {
             if (System.IO.File.Exists(App.RootPath + settingsFileName))
             {
-                
-                    string text = System.IO.File.ReadAllText(App.RootPath + settingsFileName);
-                    settings = JsonConvert.DeserializeObject<Settings>(text);
-                    return settings;
+
+                string text = System.IO.File.ReadAllText(App.RootPath + settingsFileName);
+                settings = JsonConvert.DeserializeObject<Settings>(text);
+                return settings;
             }
             else
             {
                 return null;
             }
-            
+
         }
     }
 

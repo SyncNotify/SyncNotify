@@ -1,30 +1,90 @@
-﻿<Page
+﻿<ui:Page
     x:Class="SyncNotify.Pages.DiaglogPages.HistoryPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:SyncNotify.Pages.DiaglogPages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
     Title="HistoryPage"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
 
     <Grid>
-        <TextBlock
-            x:Name="History_TextBlock"
-            Margin="55,15,0,0"
-            FontSize="40"
-            FontWeight="Bold"
-            Text="历史消息"
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock
+                    x:Name="historyTextBlock"
+                    Margin="55,15,0,0"
+                    FontSize="40"
+                    FontWeight="Bold"
+                    Text="历史消息"
+                    TextWrapping="Wrap" />
+                <!--  主消息面板的border  -->
+                <StackPanel x:Name="multiple_message_stack_panel">
+                    <Border Margin="50,10,50,0" Style="{StaticResource ResourceKey=Style_SectionBorderStyle}">
+                        <StackPanel>
+                            <TextBlock
+            x:Name="notificationTextBlock"
+            Padding="10"
+            FontSize="60"
+            Text="还没有消息"
             TextWrapping="Wrap" />
-        <StackPanel Grid.Row="2">
-            <TextBlock
-                Margin="55,80,0,0"
-                FontSize="15"
-                Text="ComingSoon~" />
+                            <Border
+            Width="Auto"
+            Height="40"
+            Margin="0,0,5,5"
+            HorizontalAlignment="Right"
+            Background="#e1f5fe"
+            Style="{StaticResource ResourceKey=Style_SectionBorderStyle}">
+                                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:FontIcon
+                        Margin="0,0,5,0"
+                        FontSize="15"
+                        Glyph="{x:Static ui:SegoeIcons.Send}" />
+                                        <TextBlock FontSize="15" Text="发送时间：" />
+                                        <TextBlock
+                        x:Name="Send_Time_TextBlock"
+                        Margin="0,0,15,0"
+                        FontSize="15"
+                        Text="" />
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:FontIcon
+                        Margin="0,0,5,0"
+                        FontSize="15"
+                        Glyph="{x:Static ui:SegoeIcons.ScreenTime}" />
+                                        <TextBlock FontSize="15" Text="显示时间：" />
+                                        <TextBlock
+                        x:Name="Display_Time_TextBlock"
+                        Margin="0,0,15,0"
+                        FontSize="15"
+                        Text="" />
 
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:FontIcon
+                        Margin="0,0,5,0"
+                        FontSize="15"
+                        Glyph="{x:Static ui:SegoeIcons.People}" />
 
-        </StackPanel>
+                                        <TextBlock FontSize="15" Text="来源：" />
+                                        <TextBlock
+                        x:Name="Origin_TextBlock"
+                        Margin="0,0,15,0"
+                        FontSize="15"
+                        Text="" />
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
-</Page>
+</ui:Page>

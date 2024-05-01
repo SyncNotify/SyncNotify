@@ -3,11 +3,11 @@
 namespace SyncNotify.Pages
 {
     /// <summary>
-    /// ComingSoon.xaml 的交互逻辑
+    /// MessageDisplayControl.xaml 的交互逻辑
     /// </summary>
-    public partial class ComingSoon : Page
+    public partial class MessageDisplayControl : UserControl
     {
-        public ComingSoon()
+        public MessageDisplayControl()
         {
             InitializeComponent();
         }

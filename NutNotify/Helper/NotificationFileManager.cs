@@ -1,26 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace SyncNotify
 {
     internal class NotificationFileManager
     {
-        public void getFileName(StreamWriter sw, string path, int indent)
+        public string[] ReadTop10TxtFiles(string directoryPath)
         {
-            //做历史消息用 遍历所有文件（预计后面加个刷新啥的 文件太多了还是不好）
-            DirectoryInfo root = new DirectoryInfo(path);
-            foreach (FileInfo f in root.GetFiles())
+            // 获取目录中的所有 txt 文件，并按创建时间排序
+            var txtFiles = Directory.GetFiles(directoryPath, "*.txt")
+                                    .OrderBy(f => new FileInfo(f).CreationTime)
+                                    .Take(10);
+
+            // 读取前 10 个 txt 文件的内容并保存到数组中
+            string[] fileContents = new string[10];
+            int index = 0;
+            foreach (var file in txtFiles)
             {
-                for (int i = 0; i < indent; i++)
-                {
-                    sw.Write("  ");
-                }
-                sw.WriteLine(f.Name);
+                fileContents[index++] = System.IO.File.ReadAllText(file, Encoding.UTF8);
             }
+
+            return fileContents;
         }
 
         public string getFileCreatingDate()
