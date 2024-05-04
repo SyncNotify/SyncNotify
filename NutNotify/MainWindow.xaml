@@ -20,7 +20,7 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <FrameworkElement.Resources>
-        <Thickness x:Key="NavigationViewContentMargin">0,40,0,0</Thickness>
+        <Thickness x:Key="NavigationViewContentMargin">0,36,0,0</Thickness>
     </FrameworkElement.Resources>
     <Grid>
         <Grid.RowDefinitions>

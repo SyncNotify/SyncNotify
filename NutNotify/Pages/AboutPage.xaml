@@ -90,7 +90,7 @@
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <Label Grid.Row="0">
-                            <ui:HyperlinkButton NavigateUri="https://github.com/InkoreStudios/UI.WPF.Modern">InkoreStudios/UI.WPF.Modern</ui:HyperlinkButton>
+                            <ui:HyperlinkButton NavigateUri="https://github.com/iNKORE-NET/UI.WPF.Modern">iNKORE-NET/UI.WPF.Modern</ui:HyperlinkButton>
                         </Label>
                         <Label Grid.Row="1">
                             <ui:HyperlinkButton NavigateUri="https://github.com/ravibpatel/AutoUpdater.NET">ravibpatel/AutoUpdater.NET</ui:HyperlinkButton>
