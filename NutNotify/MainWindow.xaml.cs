@@ -86,6 +86,8 @@ namespace SyncNotify
             //测试用
             //Visibility = Visibility.Hidden;
 
+            navigationView.PaneTitle = Title;
+
         }
 
         private void showNotifyIcon()

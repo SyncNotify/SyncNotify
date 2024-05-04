@@ -12,21 +12,29 @@
     Height="750"
     ui:ThemeManager.IsThemeAware="True"
     ui:TitleBar.IsBackButtonVisible="False"
+    ui:TitleBar.Height="36"
     ui:TitleBar.ExtendViewIntoTitleBar="True"  
     ui:WindowHelper.FixMaximizedWindow="False"
     ui:WindowHelper.UseModernWindowStyle="True"
     Visibility="{Binding mainWindowVisibility}"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
+    <FrameworkElement.Resources>
+        <Thickness x:Key="NavigationViewContentMargin">0,40,0,0</Thickness>
+    </FrameworkElement.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <ui:ContentDialog x:Name="ContentDialog" Visibility="Collapsed">
             <TextBlock x:Name="ContentDialog_TextBlock" FontSize="15"/>
         </ui:ContentDialog>
         <muxc:NavigationView
             x:Name="navigationView"
-            IsTitleBarAutoPaddingEnabled="True"
+            IsTitleBarAutoPaddingEnabled="False"
             ItemInvoked="navigationView_ItemInvoked"
-            PaneDisplayMode="Auto">
+            PaneDisplayMode="Auto" OpenPaneLength="200" IsPaneOpen="False" Grid.RowSpan="2">
             <muxc:NavigationView.MenuItems>
                 <muxc:NavigationViewItem Content="即时消息" Tag="realTimeMessage" IsSelected="True">
                     <muxc:NavigationViewItem.Icon>
