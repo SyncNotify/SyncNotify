@@ -47,7 +47,7 @@
                             Grid.RowSpan="2"
                             Margin="5,15,20,15"
                             FontSize="20"
-                            Glyph="{x:Static ui:SegoeIcons.GoToStart}" />
+                            Icon="{x:Static ui:SegoeFluentIcons.GoToStart}" />
                         <TextBlock
                             x:Name="TextBlock_Auto_Start"
                             Grid.Column="1"
@@ -85,7 +85,7 @@
                             Grid.RowSpan="2"
                             Margin="5,15,20,15"
                             FontSize="20"
-                            Glyph="{x:Static ui:SegoeIcons.OpenFile}" />
+                            Icon="{x:Static ui:SegoeFluentIcons.OpenFile}" />
                         <TextBlock
                             x:Name="TextBlock_Configualation_Editor"
                             Grid.Column="1"
@@ -137,7 +137,7 @@
                             Grid.RowSpan="2"
                             Margin="5,15,20,15"
                             FontSize="20"
-                            Glyph="{x:Static ui:SegoeIcons.Volume}" />
+                            Icon="{x:Static ui:SegoeFluentIcons.Volume}" />
                         <TextBlock
                             x:Name="TextBlock_Sound_Configualator"
                             Grid.Column="1"
@@ -195,7 +195,7 @@
                             Grid.RowSpan="2"
                             Margin="5,15,20,15"
                             FontSize="20"
-                            Glyph="{x:Static ui:SegoeIcons.StopPresenting}" />
+                            Icon="{x:Static ui:SegoeFluentIcons.StopPresenting}" />
                         <TextBlock
                             x:Name="TextBlock_Close_Prevention"
                             Grid.Column="1"
@@ -242,7 +242,7 @@
                         <ColumnDefinition/>
                         <ColumnDefinition Width="200"/>
                     </Grid.ColumnDefinitions>
-                    <ui:FontIcon Glyph="{x:Static ui:SegoeIcons.LocaleLanguage}" Grid.RowSpan="2" Margin="5,15,20,15" FontSize="20"/>
+                    <ui:FontIcon Icon="{x:Static ui:SegoeFluentIcons.LocaleLanguage}" Grid.RowSpan="2" Margin="5,15,20,15" FontSize="20"/>
                     <TextBlock x:Name="TextBlock_Language" Text="M_LANGUAGE" Grid.Column="1" VerticalAlignment="Bottom" Margin="0,0,0,2"/>
                     <TextBlock x:Name="TextBlock_Language_Description" Text="M_LANGUAGE_DESCRIPTION" Grid.Column="1" VerticalAlignment="Top" Grid.Row="1" Margin="0,2,20,5" Opacity="0.615" FontSize="12" TextTrimming="CharacterEllipsis" TextWrapping="WrapWithOverflow"/>
 
@@ -282,7 +282,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <ui:FontIcon Glyph="{x:Static ui:SegoeIcons.Light}" Grid.RowSpan="2" Margin="5,15,20,15" FontSize="20"/>
+                <ui:FontIcon Icon="{x:Static ui:SegoeFluentIcons.Light}" Grid.RowSpan="2" Margin="5,15,20,15" FontSize="20"/>
                 <TextBlock x:Name="TextBlock_ThemeMode" Text="M_THEMEMODE" Grid.Column="1" VerticalAlignment="Bottom" Margin="0,0,0,2"/>
                 <TextBlock x:Name="TextBlock_ThemeMode_Description" Text="M_THEMEMODE_DESCRIPTION" Grid.Column="1" VerticalAlignment="Top" Grid.Row="1" Margin="0,2,20,5" Opacity="0.615" FontSize="12" TextTrimming="CharacterEllipsis" TextWrapping="WrapWithOverflow"/>
 

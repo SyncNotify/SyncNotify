@@ -31,7 +31,7 @@
                             <ui:FontIcon
                                 Margin="0,0,5,0"
                                 FontSize="15"
-                                Glyph="{x:Static ui:SegoeIcons.Send}" />
+                                Icon="{x:Static ui:SegoeFluentIcons.Send}" />
                             <TextBlock FontSize="15" Text="发送时间：" />
                             <TextBlock
                                 x:Name="Send_Time_TextBlock"
@@ -43,7 +43,7 @@
                             <ui:FontIcon
                                 Margin="0,0,5,0"
                                 FontSize="15"
-                                Glyph="{x:Static ui:SegoeIcons.ScreenTime}" />
+                                Icon="{x:Static ui:SegoeFluentIcons.ScreenTime}" />
                             <TextBlock FontSize="15" Text="显示时间：" />
                             <TextBlock
                                 x:Name="Display_Time_TextBlock"
@@ -56,7 +56,7 @@
                             <ui:FontIcon
                                 Margin="0,0,5,0"
                                 FontSize="15"
-                                Glyph="{x:Static ui:SegoeIcons.People}" />
+                                Icon="{x:Static ui:SegoeFluentIcons.People}" />
 
                             <TextBlock FontSize="15" Text="来源：" />
                             <TextBlock

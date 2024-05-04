@@ -50,7 +50,7 @@
                 Click="DoNotDisturb_Button_Click"
                 ToolTip="勿扰模式">
                 <Button.Content>
-                    <ui:FontIcon FontSize="20" Glyph="{x:Static ui:SegoeIcons.StopPresenting}" />
+                    <ui:FontIcon FontSize="20" Icon="{x:Static ui:SegoeFluentIcons.StopPresenting}" />
                 </Button.Content>
             </Button>
         </StackPanel>
