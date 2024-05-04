@@ -23,12 +23,12 @@ namespace SyncNotify
         {
             if (InternalProper.RecentText != null)
             {
-                notificationTextBlock.Dispatcher.Invoke(() =>
-                {
-                    notificationTextBlock.Text = InternalProper.RecentText;
-                    Send_Time_TextBlock.Text = InternalProper.RecentTime;
-                    Display_Time_TextBlock.Text = InternalProper.RecentTime;
-                });
+                //notificationTextBlock.Dispatcher.Invoke(() =>
+                //{
+                //    notificationTextBlock.Text = InternalProper.RecentText;
+                //    Send_Time_TextBlock.Text = InternalProper.RecentTime;
+                //    Display_Time_TextBlock.Text = InternalProper.RecentTime;
+                //});
             }
         }
 
@@ -36,12 +36,12 @@ namespace SyncNotify
         public void refeshMessage(SyncNotify.File file)
         {
             savedFile = file;
-            notificationTextBlock.Dispatcher.Invoke(() =>
-            {
-                notificationTextBlock.Text = savedFile.FileContent;
-                Send_Time_TextBlock.Text = savedFile.FileCreatingDate;
-                Display_Time_TextBlock.Text = savedFile.FileCreatingDate;
-            });
+            //notificationTextBlock.Dispatcher.Invoke(() =>
+            //{
+            //    notificationTextBlock.Text = savedFile.FileContent;
+            //    Send_Time_TextBlock.Text = savedFile.FileCreatingDate;
+            //    Display_Time_TextBlock.Text = savedFile.FileCreatingDate;
+            //});
             popUp();
         }
 

@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using Page = iNKORE.UI.WPF.Modern.Controls.Page;
 
 namespace SyncNotify.Pages.DiaglogPages
 {
