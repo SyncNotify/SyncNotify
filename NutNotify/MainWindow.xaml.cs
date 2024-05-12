@@ -1,6 +1,7 @@
 ﻿using AutoUpdaterDotNET;
 using iNKORE.UI.WPF.Modern.Controls;
 using SyncNotify.Pages;
+using SyncNotify.Pages.DiaglogPages;
 using System;
 using System.ComponentModel;
 using System.Windows;
@@ -178,7 +179,7 @@ namespace SyncNotify
                     break;
                 case "historyMessage":
                     //MainFrame.Navigate(new HistoryPage());
-                    MainFrame.Navigate(new ComingSoon());
+                    MainFrame.Navigate(new HistoryPage());
                     break;
             }
         }

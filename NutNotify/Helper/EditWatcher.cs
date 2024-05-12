@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Threading;
+using System.Windows;
 
 namespace SyncNotify
 {
@@ -68,8 +69,7 @@ namespace SyncNotify
             NotificationFileManager notificationFileManager = new NotificationFileManager();
             SyncNotify.File file = new File();
             file.FileName = fileName;
-            file.FileContent = content;
-            file.FileCreatingDate = notificationFileManager.getFileCreatingDate();
+            file.FileCreatingTime = notificationFileManager.getFileCreatingDate(file.FileLocation); ;
             file.FileType = Path.GetExtension(fileName);
             //if (extension.Length > 0)
             //{
@@ -90,13 +90,13 @@ namespace SyncNotify
                 reader.Close();
                 InternalProper.RecentText = content;
                 //RealTimeMessagePage.Instance.responseGetter(content);
-
-
-
                 //TODO REMOVAL IN THE FUTURE
-                InternalProper.RecentTime = file.FileCreatingDate;
+                InternalProper.RecentTime = file.FileCreatingTime;
+                file.FileContent = content;
                 RealTimeMessagePage.Instance.refeshMessage(file);
             }).Start();
+            
+
         }
 
         private static void displayJsonMessage()

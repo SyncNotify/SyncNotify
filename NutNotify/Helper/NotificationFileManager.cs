@@ -1,33 +1,75 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows;
 
 namespace SyncNotify
 {
     internal class NotificationFileManager
     {
-        public string[] ReadTop10TxtFiles(string directoryPath)
+
+        public string[] ReadTop10TxtFilesContent(string folderPath)
         {
-            // 获取目录中的所有 txt 文件，并按创建时间排序
-            var txtFiles = Directory.GetFiles(directoryPath, "*.txt")
-                                    .OrderBy(f => new FileInfo(f).CreationTime)
-                                    .Take(10);
-
-            // 读取前 10 个 txt 文件的内容并保存到数组中
-            string[] fileContents = new string[10];
-            int index = 0;
-            foreach (var file in txtFiles)
+            if (Directory.Exists(folderPath))
             {
-                fileContents[index++] = System.IO.File.ReadAllText(file, Encoding.UTF8);
-            }
 
-            return fileContents;
+                IEnumerable<string> txtFilesIEnum = Directory.GetFiles(folderPath, "*.txt")
+                        .OrderBy(f => new FileInfo(f).CreationTime)
+                        .Take(50);
+                string[] txtFiles = txtFilesIEnum.ToArray();
+                // 读取前 10 个 txt 文件的内容并保存到数组中
+                string[] fileContents = new string[txtFiles.Length];
+                for (int i = 0; i < txtFiles.Length; i++)
+                {
+                    fileContents[i] = System.IO.File.ReadAllText(txtFiles[i]);
+
+                }
+
+                return fileContents;
+            }
+            else
+            {
+                MessageBox.Show(folderPath);
+                return null;
+            };
+
+
+
+        }
+        public string[] ReadTop10TxtFilesCreatingTime(string folderPath)
+        {
+            if (Directory.Exists(folderPath))
+            {
+                // 获取目录中的所有 txt 文件，并按创建时间排序
+                IEnumerable<string> txtFilesIEnum = Directory.GetFiles(folderPath, "*.txt")
+                                    .OrderBy(f => new FileInfo(f).LastWriteTime)
+                                    .Take(50);
+                string[] txtFiles = txtFilesIEnum.ToArray();
+                // 读取这些文件的创建时间并保存到数组中
+                string[] fileCreationTime = new string[txtFiles.Length];
+                for (int i = 0; i < txtFiles.Length; i++)
+                {
+                    fileCreationTime[i] = getFileCreatingDate(txtFiles[i]);
+                }
+
+                return fileCreationTime;
+            }
+            else
+            {
+                MessageBox.Show(folderPath);
+                return null;
+            };
+
+
+
         }
 
-        public string getFileCreatingDate()
+        public string getFileCreatingDate(string fileLocation)
         {
-            DateTime dt = DateTime.Now;
+            FileInfo file = new FileInfo(fileLocation);
+            DateTime dt = file.LastWriteTime;
             string time = dt.ToString("yyyy-MM-dd HH:mm:ss");
             return time;
         }

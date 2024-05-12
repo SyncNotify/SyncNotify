@@ -1,4 +1,8 @@
-﻿using System.Windows.Controls;
+﻿using System.Runtime.CompilerServices;
+using System.Threading;
+using System.Windows;
+using System.Windows.Controls;
+using Windows.Devices.Sensors;
 
 namespace SyncNotify.Pages
 {
@@ -7,9 +11,33 @@ namespace SyncNotify.Pages
     /// </summary>
     public partial class MessageDisplayControl : UserControl
     {
+        private File savedFile;
+
         public MessageDisplayControl()
         {
             InitializeComponent();
+        }
+        public void receiveMessage(SyncNotify.File file)
+        {
+            savedFile = file;
+            notificationTextBlock.Dispatcher.Invoke(() => {
+                
+                notificationTextBlock.Text = savedFile.FileContent;
+                Send_Time_TextBlock.Text = savedFile.FileCreatingTime;
+                Display_Time_TextBlock.Text = savedFile.FileCreatingTime;
+            });
+
+        }
+
+        public void setMessage(string  messageContent,string creatingTime) 
+        { 
+            if(messageContent != null) 
+            {
+                notificationTextBlock.FontSize = 20;
+                notificationTextBlock.Text = messageContent;
+                Send_Time_TextBlock.Text = creatingTime;
+                Display_Time_TextBlock.Text = creatingTime;
+            }
         }
     }
 }
