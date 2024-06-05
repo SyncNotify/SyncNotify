@@ -99,7 +99,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helper\AutoStartupHelper.cs" />
-    <Compile Include="File.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="Helper\FileSelectHelper.cs" />
     <Compile Include="Helper\NotificationFileManager.cs" />
     <Compile Include="Pages\AboutPage.xaml.cs">

@@ -34,7 +34,7 @@ namespace SyncNotify
         }
 
         //刷新消息用，由别的类来通知来消息，然后根据File里的东西进行刷新
-        public void refeshMessage(SyncNotify.File file)
+        public void refeshMessage(SyncNotify.Message file)
         {
             message_display.receiveMessage(file);
             popUp();

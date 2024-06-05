@@ -29,7 +29,7 @@ namespace SyncNotify.Pages
                 AutoStartup_Toggle.IsOn = settings.General.AutoStartup;
                 //首先在页面加载时移除监听事件
                 ComboboxItem_SelectFile.Selected -= ComboBoxItem_FileSelect_Selected;
-                ComboboxItem_SelectFile.Content = settings.Message.MessageArrivalSound;
+                ComboboxItem_SelectFile.Content = settings.Messages.MessageArrivalSound;
                 ComboboxItem_SelectFile.IsSelected = true;
                 //重新添加监听事件
                 ComboboxItem_SelectFile.Selected += ComboBoxItem_FileSelect_Selected;
@@ -63,7 +63,7 @@ namespace SyncNotify.Pages
             string fileName = System.IO.Path.GetFileNameWithoutExtension(filePath);
             ComboboxItem_SelectFile.Content = fileName;
             //保存设置到文件
-            settings.Message.MessageArrivalSound = filePath;
+            settings.Messages.MessageArrivalSound = filePath;
             settingsManager.SaveSettingsToFile(settings);
         }
 

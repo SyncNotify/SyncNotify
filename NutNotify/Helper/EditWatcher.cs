@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Threading;
 using System.Windows;
 
@@ -62,29 +63,41 @@ namespace SyncNotify
         private static void Watcher_Created(object sender, FileSystemEventArgs e)
         {
             string fileName = $"{e.Name}";
-            string filePath = $"{e.FullPath}";
             //获取文件后缀名
-            //string extension = fileName.Substring(fileName.IndexOf("."));
+            string extension = fileName.Substring(fileName.IndexOf("."));
             //对file进行属性设置
             NotificationFileManager notificationFileManager = new NotificationFileManager();
-            SyncNotify.File file = new File();
-            file.FileName = fileName;
-            file.FileLocation = filePath;  
-            file.FileCreatingTime = notificationFileManager.getFileCreatingDate(file.FileLocation); ;
-            file.FileType = Path.GetExtension(fileName);
-            //if (extension.Length > 0)
-            //{
-            //    if (file.FileType == ".json")
-            //    {
-            //        displayJsonMessage();
-            //    }
-            //}
 
+            SyncNotify.Message file = new Message();
+            file.FileName = $"{e.Name}";
+            file.FileLocation = $"{e.FullPath}"; 
+            file.FileCreatingTime = notificationFileManager.getFileCreatingDate($"{e.FullPath}"); ;
+            file.FileType = Path.GetExtension(fileName);
+            file.FileLocation = $"{e.FullPath}";
+
+            if (file.FileType.Length > 0)
+            {
+                if (file.FileType == ".json")
+                {
+                    displayJsonMessage();
+                }else if(file.FileType == ".txt")
+                {
+                    displayTxtMessage(file);
+                }
+            }
+
+            
+            
+
+        }
+
+        private static void displayTxtMessage(SyncNotify.Message file)
+        {
             new Thread(() =>
             {
                 Thread.Sleep(2000);
                 // 打开文件并创建 StreamReader 对象
-                StreamReader reader = new StreamReader(filePath);
+                StreamReader reader = new StreamReader(file.FileLocation);
                 // 读取文件内容
                 content = reader.ReadToEnd();
                 // 关闭流
@@ -96,13 +109,11 @@ namespace SyncNotify
                 file.FileContent = content;
                 RealTimeMessagePage.Instance.refeshMessage(file);
             }).Start();
-            
-
         }
 
         private static void displayJsonMessage()
         {
-
+            MessageBox.Show("这是一条json消息");
         }
     }
 }

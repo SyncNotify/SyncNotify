@@ -11,13 +11,13 @@ namespace SyncNotify.Pages
     /// </summary>
     public partial class MessageDisplayControl : UserControl
     {
-        private File savedFile;
+        private Message savedFile;
 
         public MessageDisplayControl()
         {
             InitializeComponent();
         }
-        public void receiveMessage(SyncNotify.File file)
+        public void receiveMessage(SyncNotify.Message file)
         {
             savedFile = file;
             notificationTextBlock.Dispatcher.Invoke(() => {

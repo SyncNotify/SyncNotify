@@ -11,7 +11,7 @@ namespace SyncNotify
         [JsonProperty("general")]
         public General General { get; set; } = new General();
         [JsonProperty("message")]
-        public Message Message { get; set; } = new Message();
+        public Messages Messages { get; set; } = new Messages();
     }
     public class General
     {
@@ -21,7 +21,7 @@ namespace SyncNotify
         public bool AutoStartup { get; set; } = true;
     }
 
-    public class Message
+    public class Messages
     {
         [JsonProperty("messageArrivalSound")]
         public string MessageArrivalSound { get; set; }
