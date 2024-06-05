@@ -45,7 +45,7 @@ namespace SyncNotify
                                  | NotifyFilters.Security;
             //绑定事件
             jsonWatcher.Created += Watcher_Created;
-            //仅监听txt文件
+            //监听json文件
             jsonWatcher.Filter = "*.json";
         }
 
@@ -69,6 +69,7 @@ namespace SyncNotify
             NotificationFileManager notificationFileManager = new NotificationFileManager();
             SyncNotify.File file = new File();
             file.FileName = fileName;
+            file.FileLocation = filePath;  
             file.FileCreatingTime = notificationFileManager.getFileCreatingDate(file.FileLocation); ;
             file.FileType = Path.GetExtension(fileName);
             //if (extension.Length > 0)

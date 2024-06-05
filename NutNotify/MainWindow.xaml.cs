@@ -4,6 +4,7 @@ using SyncNotify.Pages;
 using SyncNotify.Pages.DiaglogPages;
 using System;
 using System.ComponentModel;
+using System.Threading;
 using System.Windows;
 using System.Windows.Forms;
 
@@ -182,6 +183,27 @@ namespace SyncNotify
                     MainFrame.Navigate(new HistoryPage());
                     break;
             }
+        }
+        public void popUp()
+        {
+            //WindowState = WindowState.Normal;
+            //Visibility = Visibility.Hidden;
+            //Thread.Sleep(100);
+            //Visibility = Visibility.Visible;
+            if (!IsVisible)
+            {
+                Show();
+            }
+
+            if (WindowState == WindowState.Minimized)
+            {
+                WindowState = WindowState.Normal;
+            }
+
+            Activate();
+            Topmost = true;  // important
+            Topmost = false; // important
+            Focus();         // important
         }
     }
 }

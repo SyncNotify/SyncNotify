@@ -16,7 +16,9 @@ namespace SyncNotify.Pages.DiaglogPages
         {
             InitializeComponent();
             //把本页面的settings对象进行赋值
-            settings = SettingsManager.GetSettingsByFile(Settings.settingsFileName, settings);
+         SettingsManager settingsManager = new SettingsManager();
+
+        settings = settingsManager.GetSettingsByFile(Settings.settingsFileName, settings);
             displayHistoryMessage();
         }
 

@@ -45,9 +45,7 @@ namespace SyncNotify
             MainWindow.Instance.Dispatcher.Invoke(() =>
             {
 
-                MainWindow.Instance.WindowState = WindowState.Normal;
-                MainWindow.Instance.Visibility = Visibility.Hidden;
-                MainWindow.Instance.Visibility = Visibility.Visible;
+                MainWindow.Instance.popUp();
 
             });
             new ToastContentBuilder()

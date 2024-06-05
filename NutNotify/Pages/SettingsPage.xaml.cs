@@ -11,6 +11,8 @@ namespace SyncNotify.Pages
     public partial class SettingsPage : iNKORE.UI.WPF.Modern.Controls.Page
     {
         public static Settings settings = new Settings();
+        SettingsManager settingsManager = new SettingsManager();
+
         public SettingsPage()
         {
             InitializeComponent();
@@ -20,7 +22,7 @@ namespace SyncNotify.Pages
         private void restoreSettings()
         {
             //把本页面的settings对象进行赋值
-            settings = SettingsManager.GetSettingsByFile(Settings.settingsFileName, settings);
+            settings = settingsManager.GetSettingsByFile(Settings.settingsFileName, settings);
             //读取属性
             if (settings != null)
             {
@@ -31,7 +33,6 @@ namespace SyncNotify.Pages
                 ComboboxItem_SelectFile.IsSelected = true;
                 //重新添加监听事件
                 ComboboxItem_SelectFile.Selected += ComboBoxItem_FileSelect_Selected;
-
             }
         }
 
@@ -39,7 +40,7 @@ namespace SyncNotify.Pages
         {
             //保存设置到文件
             settings.General.AutoStartup = AutoStartup_Toggle.IsOn;
-            SettingsManager.SaveSettingsToFile(settings);
+            settingsManager.SaveSettingsToFile(settings);
             //创建启动项
             AutoStartupHelper helper = new AutoStartupHelper();
             if (AutoStartup_Toggle.IsOn)
@@ -63,7 +64,7 @@ namespace SyncNotify.Pages
             ComboboxItem_SelectFile.Content = fileName;
             //保存设置到文件
             settings.Message.MessageArrivalSound = filePath;
-            SettingsManager.SaveSettingsToFile(settings);
+            settingsManager.SaveSettingsToFile(settings);
         }
 
         private void Listen_Button_Click(object sender, RoutedEventArgs e)
@@ -72,8 +73,19 @@ namespace SyncNotify.Pages
             FileSelectHelper fileSelectHelper = new FileSelectHelper();
             string filePath = fileSelectHelper.getFolderPath("选择要监听的文件夹（暂时只支持一个）");
             //保存设置到文件
-            settings.General.FolderLocation = filePath;
-            SettingsManager.SaveSettingsToFile(settings);
+            if(settings == null)
+            {
+                Settings settings = new Settings();
+                settings.General.FolderLocation = filePath;
+                settingsManager.SaveSettingsToFile(settings);
+            }
+            else
+            {
+
+                settings.General.FolderLocation = filePath;
+                settingsManager.SaveSettingsToFile(settings);
+            }
+
         }
     }
 }

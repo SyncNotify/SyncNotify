@@ -5,23 +5,24 @@ namespace SyncNotify
 {
     internal class SettingsManager
     {
-
-        public static void SaveSettingsToFile(Settings settings)
-        {
+        public SettingsManager() {
             if (!Directory.Exists(App.RootPath))
             {
                 Directory.CreateDirectory(App.RootPath);
             }
+        }
+        public void SaveSettingsToFile(Settings settings)
+        {
+            
             string text = JsonConvert.SerializeObject(settings, Formatting.Indented);
             try
             {
-
                 System.IO.File.WriteAllText(App.RootPath + Settings.settingsFileName, text);
             }
             catch { }
         }
 
-        public static Settings GetSettingsByFile(string settingsFileName, Settings settings)
+        public Settings GetSettingsByFile(string settingsFileName, Settings settings)
         {
             if (System.IO.File.Exists(App.RootPath + settingsFileName))
             {

@@ -16,7 +16,7 @@ namespace SyncNotify
             {
 
                 IEnumerable<string> txtFilesIEnum = Directory.GetFiles(folderPath, "*.txt")
-                        .OrderBy(f => new FileInfo(f).CreationTime)
+                        .OrderByDescending(f => new FileInfo(f).LastWriteTime)
                         .Take(50);
                 string[] txtFiles = txtFilesIEnum.ToArray();
                 // 读取前 10 个 txt 文件的内容并保存到数组中
@@ -44,7 +44,7 @@ namespace SyncNotify
             {
                 // 获取目录中的所有 txt 文件，并按创建时间排序
                 IEnumerable<string> txtFilesIEnum = Directory.GetFiles(folderPath, "*.txt")
-                                    .OrderBy(f => new FileInfo(f).LastWriteTime)
+                                    .OrderByDescending(f => new FileInfo(f).LastWriteTime)
                                     .Take(50);
                 string[] txtFiles = txtFilesIEnum.ToArray();
                 // 读取这些文件的创建时间并保存到数组中
