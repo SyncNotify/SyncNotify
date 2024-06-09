@@ -79,7 +79,7 @@ namespace SyncNotify
             {
                 if (file.FileType == ".json")
                 {
-                    displayJsonMessage();
+                    displayJsonMessage(file);
                 }else if(file.FileType == ".txt")
                 {
                     displayTxtMessage(file);
@@ -111,7 +111,7 @@ namespace SyncNotify
             }).Start();
         }
 
-        private static void displayJsonMessage()
+        private static void displayJsonMessage(SyncNotify.Message file)
         {
             MessageBox.Show("这是一条json消息");
         }

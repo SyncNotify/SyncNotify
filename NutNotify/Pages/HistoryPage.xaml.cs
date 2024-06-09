@@ -10,7 +10,7 @@ namespace SyncNotify.Pages.DiaglogPages
     public partial class HistoryPage : Page
     {
         //需要一个settings对象
-        public static Settings settings = new Settings();
+        internal static Settings settings = new Settings();
 
         public HistoryPage()
         {

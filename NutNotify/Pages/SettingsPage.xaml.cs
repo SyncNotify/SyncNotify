@@ -10,7 +10,7 @@ namespace SyncNotify.Pages
     //关于xaml中的文件：可以把schemas.inkore.net设置为默认命名空间，这样子组件库的组件就不要前缀，但是wpf默认的东西就要前缀了
     public partial class SettingsPage : iNKORE.UI.WPF.Modern.Controls.Page
     {
-        public static Settings settings = new Settings();
+        internal static Settings settings = new Settings();
         SettingsManager settingsManager = new SettingsManager();
 
         public SettingsPage()
@@ -81,7 +81,6 @@ namespace SyncNotify.Pages
             }
             else
             {
-
                 settings.General.FolderLocation = filePath;
                 settingsManager.SaveSettingsToFile(settings);
             }

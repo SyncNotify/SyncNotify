@@ -5,25 +5,25 @@ namespace SyncNotify
 
 
 
-    public class Settings
+    internal class Settings
     {
-        public static string settingsFileName = "Settings.json";
+        internal static string settingsFileName = "Settings.json";
         [JsonProperty("general")]
-        public General General { get; set; } = new General();
+        internal General General { get; set; } = new General();
         [JsonProperty("message")]
-        public Messages Messages { get; set; } = new Messages();
+        internal Messages Messages { get; set; } = new Messages();
     }
-    public class General
+    internal class General
     {
         [JsonProperty("folderLocation")]
-        public string FolderLocation { get; set; } = @"D:\sync\通知";
+        internal string FolderLocation { get; set; } = @"D:\sync\通知";
         [JsonProperty("autoStartup")]
-        public bool AutoStartup { get; set; } = true;
+        internal bool AutoStartup { get; set; } = true;
     }
 
-    public class Messages
+    internal class Messages
     {
         [JsonProperty("messageArrivalSound")]
-        public string MessageArrivalSound { get; set; }
+        internal string MessageArrivalSound { get; set; }
     }
 }
