@@ -22,9 +22,9 @@ namespace SyncNotify.Pages
             savedFile = file;
             notificationTextBlock.Dispatcher.Invoke(() => {
                 
-                notificationTextBlock.Text = savedFile.FileContent;
-                Send_Time_TextBlock.Text = savedFile.FileCreatingTime;
-                Display_Time_TextBlock.Text = savedFile.FileCreatingTime;
+                notificationTextBlock.Text = savedFile.Property.FileContent;
+                Send_Time_TextBlock.Text = savedFile.Property.FileCreatingTime;
+                Display_Time_TextBlock.Text = savedFile.Property.FileCreatingTime;
             });
 
         }
@@ -35,7 +35,7 @@ namespace SyncNotify.Pages
             {
                 notificationTextBlock.FontSize = 20;
                 notificationTextBlock.Text = messageContent;
-                Send_Time_TextBlock.Text = creatingTime;
+                 Send_Time_TextBlock.Text = creatingTime;
                 Display_Time_TextBlock.Text = creatingTime;
             }
         }
