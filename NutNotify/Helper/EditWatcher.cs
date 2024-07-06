@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SyncNotify.Helper;
+using System;
 using System.Globalization;
 using System.IO;
 using System.Threading;
@@ -11,7 +12,6 @@ namespace SyncNotify
     {
         public static Settings Settings = new Settings();
         public static string settingsFileName = "Settings.json";
-        public static string content;
         public static NotificationFileManager notificationFileManager = new NotificationFileManager();
         public static Message message = new Message();
         public void init()
@@ -82,70 +82,17 @@ namespace SyncNotify
             {
                 if (file.Property.FileType == ".json")
                 {
-                    displayJsonMessage(file);
+                    new MessageDisplayHelper().displayJsonMessage(file);
                 }
                 else if (file.Property.FileType == ".txt")
                 {
-                    displayTxtMessage(file);
+                    new MessageDisplayHelper().displayTxtMessage(file);
                 }
             }
-
-
-
-
         }
 
-        private static void displayTxtMessage(SyncNotify.Message file)
-        {
-            new Thread(() =>
-            {
-                Thread.Sleep(2000);
-                // 打开文件并创建 StreamReader 对象
-                StreamReader reader = new StreamReader(file.Property.FileLocation);
-                // 读取文件内容
-                content = reader.ReadToEnd();
-                // 关闭流
-                reader.Close();
-                InternalProper.RecentText = content;
-                //RealTimeMessagePage.Instance.responseGetter(content);
-                //TODO REMOVAL IN THE FUTURE
-                InternalProper.RecentTime = file.Property.FileCreatingTime;
-                file.Property.FileContent = content;
-                RealTimeMessagePage.Instance.refeshMessage(file);
-            }).Start();
-        }
+        
 
-        private static void displayJsonMessage(SyncNotify.Message file)
-        {
-            message = notificationFileManager.getMessageByFile(file.Property.FileLocation);
-            switch (message.Display.FileDisplayMode)
-            {
-                case 0:
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    //FIGURED
-                    setTimer();
-
-                    break;
-            }
-            System.Windows.MessageBox.Show(message.Display.FileDisplayMode.ToString());
-        }
-
-        private static void setTimer()
-        {
-            DateTimeFormatInfo dateTimeFormatInfo = new DateTimeFormatInfo();
-            dateTimeFormatInfo.ShortDatePattern = "yyyy-MM-dd-HH-mm-ss";
-            DateTime now = DateTime.Now;
-            DateTime targetTime = Convert.ToDateTime(message.Display.FileDisplayTime, dateTimeFormatInfo);
-            int msUntilFour = (int)((targetTime - now).TotalMilliseconds);
-            //System.Threading.Timer t = new System.Threading.Timer();
-            //t.Change(msUntilFour, Timeout.Infinite);
-        }
+        
     }
 }

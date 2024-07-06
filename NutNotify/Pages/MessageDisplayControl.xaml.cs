@@ -17,18 +17,29 @@ namespace SyncNotify.Pages
         {
             InitializeComponent();
         }
-        public void receiveMessage(SyncNotify.Message file)
+
+        //接收消息的方法
+        public void receiveMessage(SyncNotify.Message message)
         {
-            savedFile = file;
+            savedFile = message;
             notificationTextBlock.Dispatcher.Invoke(() => {
-                
                 notificationTextBlock.Text = savedFile.Property.FileContent;
                 Send_Time_TextBlock.Text = savedFile.Property.FileCreatingTime;
-                Display_Time_TextBlock.Text = savedFile.Property.FileCreatingTime;
+                Display_Time_TextBlock.Text = savedFile.Display.FileDisplayTime;
+
+                if (savedFile.Display.FileDisplayTime.Equals(savedFile.Property.FileCreatingTime))
+                {
+                    RealTime_Message.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    Sheduled_Message.Visibility = Visibility.Visible;
+                }
             });
 
         }
 
+        //手动设置消息内容的方法
         public void setMessage(string  messageContent,string creatingTime) 
         { 
             if(messageContent != null) 

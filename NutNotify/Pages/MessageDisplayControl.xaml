@@ -19,55 +19,100 @@
                     FontSize="60"
                     Text="还没有消息"
                     TextWrapping="Wrap" />
-                <Border
-                    Width="Auto"
-                    Height="40"
-                    Margin="0,0,5,5"
-                    HorizontalAlignment="Right"
-                    Background="#e1f5fe"
-                    Style="{StaticResource ResourceKey=Style_SectionBorderStyle}">
-                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                        <StackPanel Orientation="Horizontal">
-                            <ui:FontIcon
-                                Margin="0,0,5,0"
-                                FontSize="15"
-                                Icon="{x:Static ui:SegoeFluentIcons.Send}" />
-                            <TextBlock FontSize="15" Text="发送时间：" />
-                            <TextBlock
-                                x:Name="Send_Time_TextBlock"
-                                Margin="0,0,15,0"
-                                FontSize="15"
-                                Text="" />
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <ui:FontIcon
-                                Margin="0,0,5,0"
-                                FontSize="15"
-                                Icon="{x:Static ui:SegoeFluentIcons.ScreenTime}" />
-                            <TextBlock FontSize="15" Text="显示时间：" />
-                            <TextBlock
-                                x:Name="Display_Time_TextBlock"
-                                Margin="0,0,15,0"
-                                FontSize="15"
-                                Text="" />
+
+                <StackPanel Orientation="Horizontal">
+                    <Border
+                        Width="Auto"
+                        Height="40"
+                        Margin="0,0,5,5"
+                        HorizontalAlignment="Right"
+                        Background="#e1f5fe"
+                        Style="{StaticResource ResourceKey=Style_SectionBorderStyle}">
+                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal">
+                                <ui:FontIcon
+                                    Margin="0,0,5,0"
+                                    FontSize="15"
+                                    Icon="{x:Static ui:SegoeFluentIcons.Send}" />
+                                <TextBlock FontSize="15" Text="发送时间：" />
+                                <TextBlock
+                                    x:Name="Send_Time_TextBlock"
+                                    Margin="0,0,15,0"
+                                    FontSize="15"
+                                    Text="" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <ui:FontIcon
+                                    Margin="0,0,5,0"
+                                    FontSize="15"
+                                    Icon="{x:Static ui:SegoeFluentIcons.ScreenTime}" />
+                                <TextBlock FontSize="15" Text="显示时间：" />
+                                <TextBlock
+                                    x:Name="Display_Time_TextBlock"
+                                    Margin="0,0,15,0"
+                                    FontSize="15"
+                                    Text="" />
+
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <ui:FontIcon
+                                    Margin="0,0,5,0"
+                                    FontSize="15"
+                                    Icon="{x:Static ui:SegoeFluentIcons.People}" />
+
+                                <TextBlock FontSize="15" Text="来源：" />
+                                <TextBlock
+                                    x:Name="Origin_TextBlock"
+                                    Margin="0,0,15,0"
+                                    FontSize="15"
+                                    Text="" />
+                            </StackPanel>
 
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <ui:FontIcon
-                                Margin="0,0,5,0"
-                                FontSize="15"
-                                Icon="{x:Static ui:SegoeFluentIcons.People}" />
+                    </Border>
 
-                            <TextBlock FontSize="15" Text="来源：" />
-                            <TextBlock
-                                x:Name="Origin_TextBlock"
-                                Margin="0,0,15,0"
-                                FontSize="15"
-                                Text="" />
+                    <Border
+                        x:Name="Sheduled_Message"
+                        Width="Auto"
+                        Height="40"
+                        Margin="0,0,5,5"
+                        Visibility="Collapsed"
+                        HorizontalAlignment="Right"
+                        Background="#DCEDC8"
+                        Style="{StaticResource ResourceKey=Style_SectionBorderStyle}">
+                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal">
+                                <ui:FontIcon
+                                    Margin="0,0,5,0"
+                                    FontSize="15"
+                                    Icon="{x:Static ui:SegoeFluentIcons.Calendar}" />
+                                <TextBlock FontSize="15" Text="定时消息" />
+                            </StackPanel>
+
                         </StackPanel>
+                    </Border>
+                    <Border
+                        x:Name="RealTime_Message"
+                        Width="Auto"
+                        Height="40"
+                        Margin="0,0,5,5"
+                        HorizontalAlignment="Right"
+                        Background="#B2DFDB"
+                        Visibility="Collapsed"
+                        Style="{StaticResource ResourceKey=Style_SectionBorderStyle}">
+                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal">
+                                <ui:FontIcon
+                                    Margin="0,0,5,0"
+                                    FontSize="15"
+                                    Icon="{x:Static ui:SegoeFluentIcons.Calendar}" />
+                                <TextBlock FontSize="15" Text="实时消息" />
+                            </StackPanel>
 
-                    </StackPanel>
-                </Border>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+
             </StackPanel>
 
         </Border>

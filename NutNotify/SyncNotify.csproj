@@ -98,7 +98,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\IconText.xaml.cs">
+      <DependentUpon>IconText.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Helper\AutoStartupHelper.cs" />
+    <Compile Include="Helper\MessageDisplayHelper.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Helper\FileSelectHelper.cs" />
     <Compile Include="Helper\NotificationFileManager.cs" />
@@ -127,6 +131,13 @@
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Helper\SettingsManager.cs" />
+    <Compile Include="WelcomeWindow.xaml.cs">
+      <DependentUpon>WelcomeWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Controls\IconText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AboutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -177,6 +188,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Style\SectionStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WelcomeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
