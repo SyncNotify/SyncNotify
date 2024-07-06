@@ -22,7 +22,7 @@ namespace SyncNotify.Pages
         private void restoreSettings()
         {
             //把本页面的settings对象进行赋值
-            settings = settingsManager.GetSettingsByFile(Settings.settingsFileName, settings);
+            settings = settingsManager.GetSettingsByFile(Settings.settingsFileName);
             //读取属性
             if (settings != null)
             {
@@ -73,7 +73,7 @@ namespace SyncNotify.Pages
             FileSelectHelper fileSelectHelper = new FileSelectHelper();
             string filePath = fileSelectHelper.getFolderPath("选择要监听的文件夹（暂时只支持一个）");
             //保存设置到文件
-            if(settings == null)
+            if (settings == null)
             {
                 Settings settings = new Settings();
                 settings.General.FolderLocation = filePath;

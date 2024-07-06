@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SyncNotify.Helper
 {
@@ -44,10 +39,15 @@ namespace SyncNotify.Helper
             switch (message.Display.FileDisplayMode)
             {
                 case 0:
+                    //DEFAULT
+                    RealTimeMessagePage.Instance.refeshMessage(message);
+
                     break;
                 case 1:
                     break;
                 case 2:
+                    //FORCED_NOW
+                    RealTimeMessagePage.Instance.refeshMessage(message);
                     break;
                 case 3:
                     break;
@@ -56,7 +56,6 @@ namespace SyncNotify.Helper
                     setTimer();
                     break;
             }
-            System.Windows.MessageBox.Show(message.Display.FileDisplayMode.ToString());
         }
 
         private static void setTimer()

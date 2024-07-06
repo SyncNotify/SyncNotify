@@ -1,5 +1,4 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using Page = iNKORE.UI.WPF.Modern.Controls.Page;
 
 namespace SyncNotify.Pages.DiaglogPages
@@ -16,9 +15,8 @@ namespace SyncNotify.Pages.DiaglogPages
         {
             InitializeComponent();
             //把本页面的settings对象进行赋值
-         SettingsManager settingsManager = new SettingsManager();
-
-        settings = settingsManager.GetSettingsByFile(Settings.settingsFileName, settings);
+            SettingsManager settingsManager = new SettingsManager();
+            settings = settingsManager.GetSettingsByFile(Settings.settingsFileName);
             displayHistoryMessage();
         }
 
@@ -27,7 +25,7 @@ namespace SyncNotify.Pages.DiaglogPages
             NotificationFileManager notificationFileManager = new NotificationFileManager();
             string[] messageContent = notificationFileManager.ReadTop10TxtFilesContent(settings.General.FolderLocation);
             string[] messageCreatingTime = notificationFileManager.ReadTop10TxtFilesCreatingTime(settings.General.FolderLocation);
-            for(int i=0 ; i < messageContent.Length; i++)
+            for (int i = 0; i < messageContent.Length; i++)
             {
                 Grid grid = new Grid();
                 StackPanel stackPanel = new StackPanel();
@@ -40,6 +38,6 @@ namespace SyncNotify.Pages.DiaglogPages
                 multiple_message_stack_panel.Children.Add(grid);
             }
         }
-        
+
     }
 }

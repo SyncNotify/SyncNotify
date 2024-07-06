@@ -5,7 +5,8 @@ namespace SyncNotify
 {
     internal class SettingsManager
     {
-        public SettingsManager() {
+        public SettingsManager()
+        {
             if (!Directory.Exists(App.RootPath))
             {
                 Directory.CreateDirectory(App.RootPath);
@@ -13,7 +14,7 @@ namespace SyncNotify
         }
         public void SaveSettingsToFile(Settings settings)
         {
-            
+
             string text = JsonConvert.SerializeObject(settings, Formatting.Indented);
             try
             {
@@ -22,14 +23,12 @@ namespace SyncNotify
             catch { }
         }
 
-        public Settings GetSettingsByFile(string settingsFileName, Settings settings)
+        public Settings GetSettingsByFile(string settingsFileName)
         {
             if (System.IO.File.Exists(App.RootPath + settingsFileName))
             {
-
                 string text = System.IO.File.ReadAllText(App.RootPath + settingsFileName);
-                settings = JsonConvert.DeserializeObject<Settings>(text);
-                return settings;
+                return JsonConvert.DeserializeObject<Settings>(text);
             }
             else
             {

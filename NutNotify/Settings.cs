@@ -16,7 +16,7 @@ namespace SyncNotify
     internal class General
     {
         [JsonProperty("folderLocation")]
-        internal string FolderLocation { get; set; } = @"D:\sync\通知";
+        internal string FolderLocation { get; set; }
         [JsonProperty("autoStartup")]
         internal bool AutoStartup { get; set; } = true;
     }

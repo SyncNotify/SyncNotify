@@ -6,7 +6,6 @@
     xmlns:local="clr-namespace:SyncNotify.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
-    xmlns:ui1="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">

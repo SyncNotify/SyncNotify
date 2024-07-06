@@ -4,7 +4,6 @@ using SyncNotify.Pages;
 using SyncNotify.Pages.DiaglogPages;
 using System;
 using System.ComponentModel;
-using System.Threading;
 using System.Windows;
 using System.Windows.Forms;
 
@@ -72,21 +71,22 @@ namespace SyncNotify
         }
         public MainWindow()
         {
-            InitializeComponent();
+            
             DataContext = this;
             // 构造函数中为静态属性赋值
             Instance = this;
             EditWatcher watcher = new EditWatcher();
-            watcher.init();
 
             showNotifyIcon();
             AutoUpdater.Start("https://cdn.githubraw.com/onear233/SyncNotify/master/updateInfo.xml");
             //_mainWindowVisibility = Visibility.Hidden;
             // 初始化默认页面
+            InitializeComponent();
             MainFrame.Navigate(new RealTimeMessagePage());
             Title = "SyncNotify" + " " + InternalProper.getVersion();
             //测试用
             //Visibility = Visibility.Hidden;
+            watcher.init();
 
             navigationView.PaneTitle = Title;
 
@@ -94,24 +94,24 @@ namespace SyncNotify
 
         private void showNotifyIcon()
         {
-            this.notifyIcon = new NotifyIcon();
-            this.notifyIcon.Text = "SyncNotify";
-            this.notifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
-            this.notifyIcon.Visible = true;
-            //打开菜单项
-            System.Windows.Forms.MenuItem open = new System.Windows.Forms.MenuItem("打开主界面");
-            open.Click += new EventHandler(Show);
-            //退出菜单项
-            System.Windows.Forms.MenuItem exit = new System.Windows.Forms.MenuItem("退出");
-            exit.Click += new EventHandler(Close);
-            //关联托盘控件
-            System.Windows.Forms.MenuItem[] childen = new System.Windows.Forms.MenuItem[] { open, exit };
-            notifyIcon.ContextMenu = new System.Windows.Forms.ContextMenu(childen);
+            //this.notifyIcon = new NotifyIcon();
+            //this.notifyIcon.Text = "SyncNotify";
+            //this.notifyIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(System.Windows.Forms.Application.ExecutablePath);
+            //this.notifyIcon.Visible = true;
+            ////打开菜单项
+            //System.Windows.Controls.MenuItem open = new System.Windows.Controls.MenuItem();
+            //open.Click += new EventHandler(Show);
+            ////退出菜单项
+            //System.Windows.Forms.MenuItem exit = new System.Windows.Forms.MenuItem("退出");
+            //exit.Click += new EventHandler(Close);
+            ////关联托盘控件
+            //System.Windows.Forms.MenuItem[] childen = new System.Windows.Forms.MenuItem[] { open, exit };
+            //notifyIcon.ContextMenu = new System.Windows.Forms.ContextMenu(childen);
 
-            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler((o, e) =>
-            {
-                if (e.Button == MouseButtons.Left) this.Show(o, e);
-            });
+            //this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler((o, e) =>
+            //{
+            //    if (e.Button == MouseButtons.Left) this.Show(o, e);
+            //});
         }
 
 

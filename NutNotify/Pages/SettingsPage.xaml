@@ -6,7 +6,6 @@
     xmlns:local="clr-namespace:SyncNotify.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
-    xmlns:ui1="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows"
     Title="SettingsPage"
     d:DesignHeight="450"
     d:DesignWidth="800"
@@ -53,7 +52,7 @@
                             Grid.Column="1"
                             Margin="0,0,0,2"
                             VerticalAlignment="Center"
-                            Style="{StaticResource ResourceKey=Style_SectionHeadlineStyle}"
+                            Style="{StaticResource ResourceKey=Setting_Text_Main_Title}"
                             Text="开机自动启动" />
                         <ui:ToggleSwitch
                             x:Name="AutoStartup_Toggle"
@@ -89,21 +88,15 @@
                         <TextBlock
                             x:Name="TextBlock_Configualation_Editor"
                             Grid.Column="1"
-                            Margin="0"
                             VerticalAlignment="Bottom"
-                            Style="{StaticResource ResourceKey=Style_SectionHeadlineStyle}"
+                            Style="{StaticResource ResourceKey=Setting_Text_Main_Title}"
                             Text="监听文件夹配置选项" />
                         <TextBlock
                             x:Name="TextBlock_ThemeMode_Description"
                             Grid.Row="1"
                             Grid.Column="1"
-                            Margin="0,1,0,2"
-                            VerticalAlignment="Top"
-                            FontSize="12"
-                            Opacity="0.615"
-                            Text="编辑监听的文件夹"
-                            TextTrimming="CharacterEllipsis"
-                            TextWrapping="WrapWithOverflow" />
+                            Style="{StaticResource Setting_Text_Description}"
+                            Text="编辑监听的文件夹" />
                         <Button
                             Grid.RowSpan="2"
                             Grid.Column="2"
@@ -141,21 +134,15 @@
                         <TextBlock
                             x:Name="TextBlock_Sound_Configualator"
                             Grid.Column="1"
-                            Margin="0"
                             VerticalAlignment="Bottom"
-                            Style="{StaticResource ResourceKey=Style_SectionHeadlineStyle}"
+                            Style="{StaticResource ResourceKey=Setting_Text_Main_Title}"
                             Text="提示音选项" />
                         <TextBlock
                             x:Name="TextBlock_Sound_Configualator_Description"
                             Grid.Row="1"
                             Grid.Column="1"
-                            Margin="0,1,0,2"
-                            VerticalAlignment="Top"
-                            FontSize="12"
-                            Opacity="0.615"
-                            Text="选择接收到消息时的提示音"
-                            TextTrimming="CharacterEllipsis"
-                            TextWrapping="WrapWithOverflow" />
+                            Style="{StaticResource Setting_Text_Description}"
+                            Text="选择接收到消息时的提示音" />
                         <ComboBox
                             x:Name="Combobox_Arrival_Sound"
                             Grid.RowSpan="2"
@@ -199,21 +186,15 @@
                         <TextBlock
                             x:Name="TextBlock_Close_Prevention"
                             Grid.Column="1"
-                            Margin="0"
                             VerticalAlignment="Bottom"
-                            Style="{StaticResource ResourceKey=Style_SectionHeadlineStyle}"
+                            Style="{StaticResource ResourceKey=Setting_Text_Main_Title}"
                             Text="防关闭策略" />
                         <TextBlock
                             x:Name="TextBlock_Close_Prevention_Description"
                             Grid.Row="1"
                             Grid.Column="1"
-                            Margin="0,1,0,2"
-                            VerticalAlignment="Top"
-                            FontSize="12"
-                            Opacity="0.615"
-                            Text="防止因为关闭窗口导致的消息遗漏"
-                            TextTrimming="CharacterEllipsis"
-                            TextWrapping="WrapWithOverflow" />
+                            Style="{StaticResource Setting_Text_Description}"
+                            Text="防止因为关闭窗口导致的消息遗漏" />
                         <Button
                             Grid.RowSpan="2"
                             Grid.Column="2"

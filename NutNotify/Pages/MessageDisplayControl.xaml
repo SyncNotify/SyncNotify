@@ -12,7 +12,6 @@
     <Grid>
         <Border Margin="50,10,50,0" Style="{StaticResource ResourceKey=Style_SectionBorderStyle}">
             <StackPanel>
-
                 <TextBlock
                     x:Name="notificationTextBlock"
                     Padding="10"
@@ -76,10 +75,10 @@
                         Width="Auto"
                         Height="40"
                         Margin="0,0,5,5"
-                        Visibility="Collapsed"
                         HorizontalAlignment="Right"
                         Background="#DCEDC8"
-                        Style="{StaticResource ResourceKey=Style_SectionBorderStyle}">
+                        Style="{StaticResource ResourceKey=Style_SectionBorderStyle}"
+                        Visibility="Collapsed">
                         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
                             <StackPanel Orientation="Horizontal">
                                 <ui:FontIcon
@@ -98,8 +97,8 @@
                         Margin="0,0,5,5"
                         HorizontalAlignment="Right"
                         Background="#B2DFDB"
-                        Visibility="Collapsed"
-                        Style="{StaticResource ResourceKey=Style_SectionBorderStyle}">
+                        Style="{StaticResource ResourceKey=Style_SectionBorderStyle}"
+                        Visibility="Collapsed">
                         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
                             <StackPanel Orientation="Horizontal">
                                 <ui:FontIcon

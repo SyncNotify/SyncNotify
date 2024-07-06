@@ -1,8 +1,5 @@
-﻿using iNKORE.UI.WPF.Modern.Controls;
-using Microsoft.Toolkit.Uwp.Notifications;
-using SyncNotify.Pages;
+﻿using Microsoft.Toolkit.Uwp.Notifications;
 using System.Windows;
-using Windows.UI.Xaml.Controls;
 
 namespace SyncNotify
 {
@@ -52,8 +49,8 @@ namespace SyncNotify
                    .AddArgument("action", "viewConversation")
                    .AddArgument("conversationId", 9813)
                    .AddText("新消息")
-                   .AddText("打开主界面查看")
-                   .Show();
+                   .AddText("打开主界面查看");
+            //.Show();
         }
 
         private void DoNotDisturb_Button_Click(object sender, RoutedEventArgs e)

@@ -6,7 +6,6 @@
     xmlns:local="clr-namespace:SyncNotify"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
-    xmlns:ui1="clr-namespace:Windows.UI.Xaml.Controls;assembly=Windows"
     xmlns:controls="clr-namespace:SyncNotify.Controls"
     Title="AboutPage"
     d:DesignHeight="450"
@@ -73,7 +72,7 @@
                                 Icon="{x:Static ui:SegoeFluentIcons.Code}" />
                             <TextBlock
                                 x:Name="TextBlock_Open_Resource"
-                                Style="{StaticResource ResourceKey=Style_SectionHeadlineStyle}"
+                                Style="{StaticResource ResourceKey=Setting_Text_Main_Title}"
                                 Grid.Column="1"
                                 Margin="0,0,0,2"
                                 VerticalAlignment="Bottom"
@@ -127,6 +126,7 @@
                                 FontSize="20"
                                 Icon="{x:Static ui:SegoeFluentIcons.Info}" />
                             <TextBlock
+                                Style="{StaticResource Setting_Text_Main_Title}"
                                 x:Name="TextBlock_Auto_Startup"
                                 Grid.Column="1"
                                 Margin="0,0,0,2"
