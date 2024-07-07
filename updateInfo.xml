@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <item>
-	<version>1.4.0.1</version>
-	<url>https://gitee.com/onear/ys/releases/download/v1.4.0-alpha1/v1.4.0-alpha1.zip</url>
-	<changelog>https://gitee.com/onear/ys/raw/master/1.4.0.1.txt</changelog>
+	<version>2.0.0.0</version>
+	<url>https://gitee.com/onear/ys/releases/download/v2.0.0-alpha0/v2.0.0.0.zip</url>
+	<changelog>https://gitee.com/onear/ys/raw/master/2.0.0.txt</changelog>
 	<mandatory>false</mandatory>
 </item>
 
