@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.IO;
 using System.Threading;
+using System.Windows;
 
 namespace SyncNotify.Helper
 {
@@ -35,7 +36,7 @@ namespace SyncNotify.Helper
 
         public void displayJsonMessage(SyncNotify.Message file)
         {
-            message = notificationFileManager.getMessageByFile(file.Property.FileLocation);
+            message = notificationFileManager.getMessageObjectByFile(file.Property.FileLocation);
             switch (message.Display.FileDisplayMode)
             {
                 case 0:
@@ -61,16 +62,19 @@ namespace SyncNotify.Helper
         private static void setTimer()
         {
             DateTimeFormatInfo dateTimeFormatInfo = new DateTimeFormatInfo();
-            dateTimeFormatInfo.ShortDatePattern = "yyyy-MM-dd-HH-mm-ss";
             dateTimeFormatInfo.LongDatePattern = "yyyy-MM-dd-HH-mm-ss";
             DateTime now = DateTime.Now;
             DateTime targetTime = DateTime.ParseExact(message.Display.FileDisplayTime, "yyyy-MM-dd-HH-mm-ss", CultureInfo.InvariantCulture);
-            int msUntilFour = (int)((targetTime - now).TotalMilliseconds);
-            System.Threading.Timer t = new System.Threading.Timer(new TimerCallback(callBack));
-            t.Change(msUntilFour, Timeout.Infinite);
+            //MessageBox.Show(targetTime.ToString() + "现在是" + now.ToString());
+            TimeSpan timeSpan = targetTime.Subtract(now);
+            System.Timers.Timer timer = new System.Timers.Timer();
+            timer.Interval = (int)timeSpan.TotalMilliseconds; // 定时器的运行周期(ms)
+            timer.Elapsed += new System.Timers.ElapsedEventHandler(callBack); // 添加调用函数
+            timer.Enabled = true;
+
         }
 
-        private static void callBack(object state)
+        private static void callBack(object state, System.Timers.ElapsedEventArgs e)
         {
             RealTimeMessagePage.Instance.refeshMessage(message);
         }

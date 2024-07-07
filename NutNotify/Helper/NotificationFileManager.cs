@@ -58,7 +58,6 @@ namespace SyncNotify
             }
             else
             {
-                MessageBox.Show(folderPath);
                 return null;
             };
 
@@ -73,6 +72,18 @@ namespace SyncNotify
             string time = dt.ToString("yyyy-MM-dd HH:mm:ss");
             return time;
         }
+        //public string getFileDisplayDate(string fileLocation)
+        //{
+        //    if (System.IO.File.Exists(fileLocation))
+        //    {
+        //        string text = System.IO.File.ReadAllText(fileLocation);
+        //        return JsonConvert.DeserializeObject<Display>(text);
+        //    }
+        //    else
+        //    {
+        //        return null;
+        //    }
+        //}
 
         //public void getJsonMessageContent(string folderPath)
         //{
@@ -94,7 +105,7 @@ namespace SyncNotify
         //{
 
         //}
-        public SyncNotify.Message getMessageByFile(string fileLocation)
+        public SyncNotify.Message getMessageObjectByFile(string fileLocation)
         {
             if (System.IO.File.Exists(fileLocation))
             {

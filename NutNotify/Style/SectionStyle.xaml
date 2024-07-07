@@ -9,5 +9,5 @@
         <Setter Property="CornerRadius" Value="4" />
         <Setter Property="Padding" Value="15,0,20,0" />
     </Style>
-    
+
 </ResourceDictionary>
