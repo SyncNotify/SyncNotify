@@ -26,20 +26,21 @@
                     TextWrapping="Wrap" />
                 <!--  主消息面板的border  -->
 
-                <pages:MessageDisplayControl x:Name="message_display"/>
-
-
+                <pages:MessageDisplayControl x:Name="message_display" />
+                <StackPanel x:Name="Information_StackPanel" VerticalAlignment="Bottom">
+                    <ui:InfoBar
+                        Title="缓更通知"
+                        Margin="55,15,55,0"
+                        VerticalAlignment="Bottom"
+                        IsOpen="True"
+                        Message="本程序的开发者已经进入高三，更新速度将大幅下降，对此带来的不便，敬请谅解 [更新于2024/7/6]"
+                        Severity="Informational" />
+                </StackPanel>
             </StackPanel>
 
-            <!--<StackPanel x:Name="Information_StackPanel" VerticalAlignment="Bottom">
-                <ui:InfoBar
-        Title="SyncNotify即将更新新版！"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Bottom"
-        Message="2024年清明节放假后，SyncNotify将会更新2.0版本，将会拥有更多功能"
-        Severity="Informational" />
-            </StackPanel>-->
+
         </ScrollViewer>
+
         <StackPanel
             Margin="0,0,10,10"
             HorizontalAlignment="Right"

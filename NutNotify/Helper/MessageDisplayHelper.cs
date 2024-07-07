@@ -70,6 +70,7 @@ namespace SyncNotify.Helper
             System.Timers.Timer timer = new System.Timers.Timer();
             timer.Interval = (int)timeSpan.TotalMilliseconds; // 定时器的运行周期(ms)
             timer.Elapsed += new System.Timers.ElapsedEventHandler(callBack); // 添加调用函数
+            timer.AutoReset = false;
             timer.Enabled = true;
 
         }
