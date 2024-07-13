@@ -24,7 +24,7 @@ namespace SyncNotify.Pages
                 notificationTextBlock.Text = savedFile.Property.FileContent;
                 Send_Time_TextBlock.Text = savedFile.Property.FileCreatingTime;
                 Display_Time_TextBlock.Text = savedFile.Display.FileDisplayTime;
-                if (savedFile.Display.FileDisplayTime != "")
+                if (savedFile.Display.FileDisplayTime != null)
                 {
                     if (savedFile.Display.FileDisplayTime.Equals(savedFile.Property.FileCreatingTime))
                     {

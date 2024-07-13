@@ -163,21 +163,24 @@ namespace SyncNotify
         {
             InitializeComponent();
             DataContext = this;
-            // 构造函数中为静态属性赋值
+
+            //构造函数中为静态属性赋值
             Instance = this;
+
+            //初始化监听服务
             watcher = new EditWatcher();
             watcher.init();
-            //init();
+
+            //展示任务栏图标
             showNotifyIcon();
+
+            //开启更新服务
             AutoUpdater.Start("https://cdn.githubraw.com/onear233/SyncNotify/master/updateInfo.xml");
-            //_mainWindowVisibility = Visibility.Hidden;
-            // 初始化默认页面
-            
+
+
+            //初始化默认页面
             MainFrame.Navigate(new RealTimeMessagePage());
             Title = "SyncNotify" + " " + InternalProper.getVersion();
-            //测试用
-            //Visibility = Visibility.Hidden;
-
             navigationView.PaneTitle = Title;
 
         }

@@ -65,8 +65,6 @@ namespace SyncNotify
         {
             string fileName = $"{e.Name}";
 
-            //获取文件后缀名
-            string extension = fileName.Substring(fileName.IndexOf("."));
             //对file进行属性设置
 
             SyncNotify.Message file = notificationFileManager.getMessageObjectByFile($"{e.FullPath}");

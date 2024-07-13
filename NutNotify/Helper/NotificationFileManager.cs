@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -109,8 +110,21 @@ namespace SyncNotify
         {
             if (System.IO.File.Exists(fileLocation))
             {
-                string text = System.IO.File.ReadAllText(fileLocation);
-                return JsonConvert.DeserializeObject<Message>(text);
+                switch (Path.GetExtension(fileLocation)){
+                    case ".json":
+                        string text = System.IO.File.ReadAllText(fileLocation);
+                        return JsonConvert.DeserializeObject<Message>(text);
+                    case ".txt":
+                        Message message = new Message();
+                        // 打开文件并创建 StreamReader 对象
+                        StreamReader reader = new StreamReader(fileLocation);
+                        message.Property.FileContent = reader.ReadToEnd() ;
+                        message.Property.FileCreatingTime = getFileCreatingDate(fileLocation);
+                        // 关闭流
+                        reader.Close();
+                        return message;
+                    default: return null;
+                };
             }
             else
             {
