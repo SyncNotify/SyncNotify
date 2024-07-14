@@ -175,7 +175,7 @@ namespace SyncNotify
             showNotifyIcon();
 
             //开启更新服务
-            AutoUpdater.Start("https://cdn.githubraw.com/onear233/SyncNotify/master/updateInfo.xml");
+            AutoUpdater.Start("https://githubraw.com/onear233/SyncNotify/master/updateInfo.xml");
 
 
             //初始化默认页面
