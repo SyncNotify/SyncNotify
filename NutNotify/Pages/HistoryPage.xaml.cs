@@ -23,7 +23,7 @@ namespace SyncNotify.Pages.DiaglogPages
         private void displayHistoryMessage()
         {
             NotificationFileManager notificationFileManager = new NotificationFileManager();
-            string[] messageContent = notificationFileManager.ReadTop10TxtFilesContent(settings.General.FolderLocation);
+            string[] messageContent = notificationFileManager.ReadTop50JsonFilesContent(settings.General.FolderLocation);
             string[] messageCreatingTime = notificationFileManager.ReadTop10TxtFilesCreatingTime(settings.General.FolderLocation);
             for (int i = 0; i < messageContent.Length; i++)
             {

@@ -11,7 +11,7 @@ namespace SyncNotify
     internal class NotificationFileManager
     {
         Message message = new Message();
-        public string[] ReadTop10TxtFilesContent(string folderPath)
+        public string[] ReadTop50TxtFilesContent(string folderPath)
         {
             if (Directory.Exists(folderPath))
             {
@@ -20,7 +20,7 @@ namespace SyncNotify
                         .OrderByDescending(f => new FileInfo(f).LastWriteTime)
                         .Take(50);
                 string[] txtFiles = txtFilesIEnum.ToArray();
-                // 读取前 10 个 txt 文件的内容并保存到数组中
+                // 读取前 50 个 txt 文件的内容并保存到数组中
                 string[] fileContents = new string[txtFiles.Length];
                 for (int i = 0; i < txtFiles.Length; i++)
                 {
@@ -35,9 +35,31 @@ namespace SyncNotify
                 MessageBox.Show(folderPath);
                 return null;
             };
+        }
+        public string[] ReadTop50JsonFilesContent(string folderPath)
+        {
+            if (Directory.Exists(folderPath))
+            {
 
+                IEnumerable<string> txtFilesIEnum = Directory.GetFiles(folderPath, "*.json")
+                        .OrderByDescending(f => new FileInfo(f).LastWriteTime)
+                        .Take(50);
+                string[] txtFiles = txtFilesIEnum.ToArray();
+                // 读取前 50 个 json 文件的内容并保存到数组中
+                string[] fileContents = new string[txtFiles.Length];
+                for (int i = 0; i < txtFiles.Length; i++)
+                {
+                    fileContents[i] = System.IO.File.ReadAllText(txtFiles[i]);
 
+                }
 
+                return fileContents;
+            }
+            else
+            {
+                MessageBox.Show(folderPath);
+                return null;
+            };
         }
         public string[] ReadTop10TxtFilesCreatingTime(string folderPath)
         {
