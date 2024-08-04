@@ -14,9 +14,11 @@
             <StackPanel>
                 <TextBlock
                     x:Name="notificationTextBlock"
+                    Margin="0,5,0,5"
                     Padding="10"
-                    FontSize="60"
-                    Text="还没有消息"
+                    Background="Transparent"
+                    FontSize="55"
+                    Text="DefaultText"
                     TextWrapping="Wrap" />
 
                 <StackPanel Orientation="Horizontal">
@@ -24,7 +26,8 @@
                         Width="Auto"
                         Height="40"
                         Margin="0,0,5,5"
-                        HorizontalAlignment="Right"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
                         Background="#e1f5fe"
                         Style="{StaticResource ResourceKey=Style_SectionBorderStyle}">
                         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
@@ -107,9 +110,31 @@
                                     Icon="{x:Static ui:SegoeFluentIcons.Calendar}" />
                                 <TextBlock FontSize="15" Text="实时消息" />
                             </StackPanel>
-
                         </StackPanel>
                     </Border>
+                    <StackPanel x:Name="control_button_stack_panel" Orientation="Horizontal">
+                        <Button
+                            x:Name="highlight_button"
+                            Height="40"
+                            Margin="0,0,5,5"
+                            VerticalAlignment="Top"
+                            Click="Hightlight_Button_Click">
+                            <Button.Content>
+                                <ui:FontIcon FontSize="20" Icon="{x:Static ui:SegoeFluentIcons.Highlight}" />
+                            </Button.Content>
+                        </Button>
+                        <Button
+                            x:Name="font_size_button"
+                            Height="40"
+                            Margin="0,0,5,5"
+                            VerticalAlignment="Top"
+                            Click="Font_Size_Button_Click">
+                            <Button.Content>
+                                <ui:FontIcon FontSize="20" Icon="{x:Static ui:SegoeFluentIcons.FontSize}" />
+                            </Button.Content>
+                        </Button>
+                    </StackPanel>
+
                 </StackPanel>
 
             </StackPanel>

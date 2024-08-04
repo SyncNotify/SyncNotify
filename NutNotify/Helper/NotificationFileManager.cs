@@ -5,6 +5,7 @@ using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Windows;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SyncNotify
 {
@@ -47,13 +48,15 @@ namespace SyncNotify
                 string[] txtFiles = txtFilesIEnum.ToArray();
                 // 读取前 50 个 json 文件的内容并保存到数组中
                 string[] fileContents = new string[txtFiles.Length];
+                string[] messageContent = new string[txtFiles.Length];
                 for (int i = 0; i < txtFiles.Length; i++)
                 {
                     fileContents[i] = System.IO.File.ReadAllText(txtFiles[i]);
-
+                    message = JsonConvert.DeserializeObject<Message>(fileContents[i]);
+                    messageContent[i] = message.Property.FileContent;
                 }
 
-                return fileContents;
+                return messageContent;
             }
             else
             {
@@ -61,7 +64,7 @@ namespace SyncNotify
                 return null;
             };
         }
-        public string[] ReadTop10TxtFilesCreatingTime(string folderPath)
+        public string[] ReadTop50TxtFilesCreatingTime(string folderPath)
         {
             if (Directory.Exists(folderPath))
             {

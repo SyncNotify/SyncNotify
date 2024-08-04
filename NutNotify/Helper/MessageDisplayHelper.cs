@@ -36,6 +36,7 @@ namespace SyncNotify.Helper
 
         public void displayJsonMessage(SyncNotify.Message file)
         {
+            
             message = notificationFileManager.getMessageObjectByFile(file.Property.FileLocation);
             switch (message.Display.FileDisplayMode)
             {

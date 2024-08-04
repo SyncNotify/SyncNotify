@@ -1,12 +1,9 @@
 ﻿using AutoUpdaterDotNET;
 using iNKORE.UI.WPF.Modern.Controls;
-using SyncNotify.Helper;
 using SyncNotify.Pages;
 using SyncNotify.Pages.DiaglogPages;
 using System;
 using System.ComponentModel;
-using System.IO;
-using System.Threading;
 using System.Windows;
 using System.Windows.Forms;
 
@@ -277,12 +274,10 @@ namespace SyncNotify
                     break;
             }
         }
+
+        //窗口弹出到所有窗口之前的逻辑
         public void popUp()
         {
-            //WindowState = WindowState.Normal;
-            //Visibility = Visibility.Hidden;
-            //Thread.Sleep(100);
-            //Visibility = Visibility.Visible;
             if (!IsVisible)
             {
                 Show();
@@ -294,9 +289,9 @@ namespace SyncNotify
             }
 
             Activate();
-            Topmost = true;  // important
-            Topmost = false; // important
-            Focus();         // important
+            Topmost = true;
+            Topmost = false; 
+            Focus();         
         }
     }
 }
