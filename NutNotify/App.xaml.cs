@@ -18,6 +18,13 @@ namespace SyncNotify
         }
 
 
+        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show("An unhandled exception just occurred: " + e.Exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Stop);
+            e.Handled = true;
+        }
+
+
         void App_Startup(object sender, StartupEventArgs e)
         {
             bool ret;

@@ -180,6 +180,10 @@ namespace SyncNotify
             Title = "SyncNotify" + " " + InternalProper.getVersion();
             navigationView.PaneTitle = Title;
 
+
+            string s = null;
+            s.Trim();
+
         }
 
         private void showNotifyIcon()
