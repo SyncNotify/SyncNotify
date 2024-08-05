@@ -2,17 +2,17 @@
     x:Class="SyncNotify.AboutPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="clr-namespace:SyncNotify.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:SyncNotify"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
-    xmlns:controls="clr-namespace:SyncNotify.Controls"
     Title="AboutPage"
     d:DesignHeight="450"
     d:DesignWidth="800"
-    mc:Ignorable="d"
     TextOptions.TextFormattingMode="Display"
-    TextOptions.TextRenderingMode="Grayscale">
+    TextOptions.TextRenderingMode="Grayscale"
+    mc:Ignorable="d">
 
     <Grid>
         <ScrollViewer>
@@ -30,14 +30,13 @@
                         TextWrapping="Wrap" />
                 </StackPanel>
                 <StackPanel
-                    Margin="0,25,0,0"
+                    Margin="55,25,0,0"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Orientation="Horizontal">
                     <Image
                         Width="40"
                         Height="40"
-                        Margin="55,0,0,0"
                         Source="/favicon.ico" />
                     <TextBlock
                         Margin="10,0,0,0"
@@ -46,7 +45,35 @@
                         Text="SyncNotify" />
 
                 </StackPanel>
-    <Expander
+                <Button>
+                    <StackPanel Orientation="Horizontal">
+                        <!--<ui:FontIcon
+                            Margin="5,5,10,5"
+                            FontSize="14"
+                            VerticalAlignment="Center"
+                            Icon="{x:Static ui:SegoeFluentIcons.}" />-->
+                        <TextBlock Text="开放源代码许可" VerticalAlignment="Center" FontSize="14"/>
+                    </StackPanel>
+                </Button>
+
+                <StackPanel
+                    x:Name="StackPanel_Version"
+                    Margin="55,10,0,0"
+                    Orientation="Horizontal">
+                    <TextBlock
+                        x:Name="TextBlock_Version"
+                        VerticalAlignment="Bottom"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Text="Release Version：" />
+                    <TextBlock
+                        x:Name="TextBlock_Version_Number"
+                        VerticalAlignment="Bottom"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Text="" />
+                </StackPanel>
+                <Expander
                     x:Name="Expander_OpenSource_Information"
                     Margin="50,15,55,0"
                     IsExpanded="True"
@@ -72,10 +99,10 @@
                                 Icon="{x:Static ui:SegoeFluentIcons.Code}" />
                             <TextBlock
                                 x:Name="TextBlock_Open_Resource"
-                                Style="{StaticResource ResourceKey=Setting_Text_Main_Title}"
                                 Grid.Column="1"
                                 Margin="0,0,0,2"
                                 VerticalAlignment="Bottom"
+                                Style="{StaticResource ResourceKey=Setting_Text_Main_Title}"
                                 Text="开源项目引用" />
 
                         </Grid>
@@ -126,11 +153,11 @@
                                 FontSize="20"
                                 Icon="{x:Static ui:SegoeFluentIcons.Info}" />
                             <TextBlock
-                                Style="{StaticResource Setting_Text_Main_Title}"
                                 x:Name="TextBlock_Auto_Startup"
                                 Grid.Column="1"
                                 Margin="0,0,0,2"
                                 VerticalAlignment="Bottom"
+                                Style="{StaticResource Setting_Text_Main_Title}"
                                 Text="详细信息" />
 
                         </Grid>
@@ -141,31 +168,39 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <StackPanel x:Name="StackPanel_Version" Orientation="Horizontal" Grid.Row="0">
-                            <TextBlock x:Name="TextBlock_Version" Text="目前版本：" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,7"/>
-                            <TextBlock x:Name="TextBlock_Version_Number" Text="" Grid.Column="2" VerticalAlignment="Bottom" Margin="0,0,0,7"/>
-                        </StackPanel>
-                        
-                        <!--开发者和特别感谢-->
+
+
+                        <!--  开发者和特别感谢  -->
                         <StackPanel Grid.Row="1">
-                            <StackPanel x:Name="StackPanel_Developer" Orientation="Horizontal" Grid.Row="1">
-                                <TextBlock x:Name="TextBlock_Developer" FontFamily="Microsoft Yahei UI" Text="开发者：" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,7"/>
+                            <StackPanel
+                                x:Name="StackPanel_Developer"
+                                Grid.Row="1"
+                                Orientation="Horizontal">
+                                <TextBlock
+                                    x:Name="TextBlock_Developer"
+                                    Grid.Column="0"
+                                    Margin="10,0,0,7"
+                                    VerticalAlignment="Bottom"
+                                    FontFamily="Microsoft Yahei UI"
+                                    Text="开发者：" />
                                 <Label>
                                     <ui:HyperlinkButton NavigateUri="https://github.com/onear233">onear233</ui:HyperlinkButton>
                                 </Label>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock x:Name="TextBlock_ThanksFor" FontFamily="Microsoft Yahei UI" Text="特别感谢：" Grid.Column="0" VerticalAlignment="Bottom" Margin="10,0,0,7"/>
+                                <TextBlock
+                                    x:Name="TextBlock_ThanksFor"
+                                    Grid.Column="0"
+                                    Margin="10,0,0,7"
+                                    VerticalAlignment="Bottom"
+                                    FontFamily="Microsoft Yahei UI"
+                                    Text="特别感谢：" />
                                 <Label>
                                     <ui:HyperlinkButton NavigateUri="https://github.com/NotYoojun">NotYoojun</ui:HyperlinkButton>
                                 </Label>
                             </StackPanel>
                         </StackPanel>
-                        
-
-
                     </Grid>
-
                 </Expander>
             </StackPanel>
 

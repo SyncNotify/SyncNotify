@@ -17,14 +17,14 @@ namespace SyncNotify
             this.Startup += new StartupEventHandler(App_Startup);
         }
 
-
+        //异常处理（临时解决方法）
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
-            MessageBox.Show("An unhandled exception just occurred: " + e.Exception.Message, "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Stop);
+            MessageBox.Show("An unhandled exception just occurred: " + e.Exception.Message, "Exception", MessageBoxButton.OK, MessageBoxImage.Stop);
             e.Handled = true;
         }
 
-
+        //重复打开的提示
         void App_Startup(object sender, StartupEventArgs e)
         {
             bool ret;
@@ -32,7 +32,7 @@ namespace SyncNotify
 
             if (!ret && !e.Args.Contains("-m")) //-m multiple
             {
-                MessageBox.Show("已有一个程序实例正在运行（请前往右下角托盘图标寻找）");
+                MessageBox.Show("已有一个程序实例正在运行（请前往右下角托盘图标寻找）","Exception", MessageBoxButton.OK, MessageBoxImage.Information);
                 Environment.Exit(0);
             }
 
