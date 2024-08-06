@@ -12,5 +12,10 @@ namespace SyncNotify
             InitializeComponent();
             TextBlock_Version_Number.Text = InternalProper.getVersion();
         }
+
+        private void OpensourceLicense(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
     }
 }

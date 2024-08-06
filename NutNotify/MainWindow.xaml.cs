@@ -84,8 +84,8 @@ namespace SyncNotify
             navigationView.PaneTitle = Title;
 
 
-            string s = null;
-            s.Trim();
+            //string s = null;
+            //s.Trim();
 
         }
 

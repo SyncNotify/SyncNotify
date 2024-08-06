@@ -45,16 +45,7 @@
                         Text="SyncNotify" />
 
                 </StackPanel>
-                <Button>
-                    <StackPanel Orientation="Horizontal">
-                        <!--<ui:FontIcon
-                            Margin="5,5,10,5"
-                            FontSize="14"
-                            VerticalAlignment="Center"
-                            Icon="{x:Static ui:SegoeFluentIcons.}" />-->
-                        <TextBlock Text="开放源代码许可" VerticalAlignment="Center" FontSize="14"/>
-                    </StackPanel>
-                </Button>
+
 
                 <StackPanel
                     x:Name="StackPanel_Version"
@@ -73,6 +64,20 @@
                         FontWeight="Bold"
                         Text="" />
                 </StackPanel>
+                <!--<Button Margin="50,10,0,10">
+                    <StackPanel Orientation="Horizontal">
+                        <ui:FontIcon
+                        Margin="5,5,10,5"
+                        FontSize="14"
+                        VerticalAlignment="Center"
+                        Icon="{x:Static ui:SegoeFluentIcons.Permissions}" />
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontSize="14"
+                            Text="开放源代码许可" />
+                    </StackPanel>
+                </Button>-->
+                <controls:IconText Icon="{x:Static ui:SegoeFluentIcons.Permissions}" Click="IconText_Click" Text="开放源代码许可" />
                 <Expander
                     x:Name="Expander_OpenSource_Information"
                     Margin="50,15,55,0"

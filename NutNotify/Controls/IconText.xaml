@@ -9,11 +9,17 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <StackPanel Orientation="Horizontal">
-        <ui:FontIcon VerticalAlignment="Center" Icon="{Binding Icon}" />
-        <TextBlock
-            Margin="{Binding IconMargin}"
-            VerticalAlignment="Center"
-            Text="{Binding Text}" />
-    </StackPanel>
+    <Button Margin="50,10,0,10" Click="Button_Click">
+        <StackPanel Orientation="Horizontal">
+            <ui:FontIcon
+                Margin="5,5,10,5"
+                VerticalAlignment="Center"
+                FontSize="14"
+                Icon="{Binding Icon, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+            <TextBlock
+                VerticalAlignment="Center"
+                FontSize="14"
+                Text="{Binding Text, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+        </StackPanel>
+    </Button>
 </UserControl>
