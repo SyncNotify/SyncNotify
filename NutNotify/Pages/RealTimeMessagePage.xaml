@@ -25,9 +25,7 @@
                     Text="实时消息"
                     TextWrapping="Wrap" />
                 <!--  主消息面板的border  -->
-                <StackPanel x:Name="Message_StackPanel">
-                    
-                </StackPanel>
+                <StackPanel x:Name="Message_StackPanel" />
                 <!--<pages:MessageDisplayControl x:Name="message_display" />-->
                 <StackPanel x:Name="Information_StackPanel" VerticalAlignment="Bottom">
                     <ui:InfoBar

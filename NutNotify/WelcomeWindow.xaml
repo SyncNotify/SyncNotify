@@ -16,9 +16,7 @@
             <TabItem Header="欢迎">
                 <StackPanel>
                     <StackPanel>
-                        <TextBlock
-                            Style="{StaticResource Welcome_Text_Title}"
-                            Text="欢迎使用SyncNotify！" />
+                        <TextBlock Style="{StaticResource Welcome_Text_Title}" Text="欢迎使用SyncNotify！" />
                         <TextBlock Style="{StaticResource Welcome_Text_Description}" Text="本向导将帮助您完成应用程序的设置，稍后，您也可以在设置中更改这些设置" />
 
                     </StackPanel>
@@ -48,8 +46,8 @@
 
             <TabItem Header="监听">
                 <StackPanel>
-                    <TextBlock Style="{StaticResource Welcome_Text_Title}" Text="接下来，您将设置监听的目录"/>
-                    <TextBlock Style="{StaticResource Welcome_Text_Description}" Text="请选择同步软件中存放通知文件的目录"/>
+                    <TextBlock Style="{StaticResource Welcome_Text_Title}" Text="接下来，您将设置监听的目录" />
+                    <TextBlock Style="{StaticResource Welcome_Text_Description}" Text="请选择同步软件中存放通知文件的目录" />
                     <Border
                         Width="720"
                         Height="80"

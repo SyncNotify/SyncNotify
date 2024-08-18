@@ -3,17 +3,17 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ikw="http://schemas.inkore.net/lib/ui/wpf"
     xmlns:local="clr-namespace:SyncNotify"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:muxc="clr-namespace:iNKORE.UI.WPF.Modern.Controls;assembly=iNKORE.UI.WPF.Modern.Controls"
     xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
-    xmlns:ikw="http://schemas.inkore.net/lib/ui/wpf"
     Width="1100"
     Height="750"
     ui:ThemeManager.IsThemeAware="True"
-    ui:TitleBar.IsBackButtonVisible="False"
+    ui:TitleBar.ExtendViewIntoTitleBar="True"
     ui:TitleBar.Height="36"
-    ui:TitleBar.ExtendViewIntoTitleBar="True"  
+    ui:TitleBar.IsBackButtonVisible="False"
     ui:WindowHelper.FixMaximizedWindow="False"
     ui:WindowHelper.UseModernWindowStyle="True"
     Visibility="{Binding mainWindowVisibility}"
@@ -24,19 +24,25 @@
     </FrameworkElement.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="36"/>
-            <RowDefinition/>
+            <RowDefinition Height="36" />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <ui:ContentDialog x:Name="ContentDialog" Visibility="Collapsed">
-            <TextBlock x:Name="ContentDialog_TextBlock" FontSize="15"/>
+            <TextBlock x:Name="ContentDialog_TextBlock" FontSize="15" />
         </ui:ContentDialog>
         <muxc:NavigationView
             x:Name="navigationView"
+            Grid.RowSpan="2"
+            IsPaneOpen="False"
             IsTitleBarAutoPaddingEnabled="False"
             ItemInvoked="navigationView_ItemInvoked"
-            PaneDisplayMode="Auto" OpenPaneLength="200" IsPaneOpen="False" Grid.RowSpan="2">
+            OpenPaneLength="200"
+            PaneDisplayMode="Auto">
             <muxc:NavigationView.MenuItems>
-                <muxc:NavigationViewItem Content="即时消息" Tag="realTimeMessage" IsSelected="True">
+                <muxc:NavigationViewItem
+                    Content="即时消息"
+                    IsSelected="True"
+                    Tag="realTimeMessage">
                     <muxc:NavigationViewItem.Icon>
                         <ui:FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xe8bd;" />
                     </muxc:NavigationViewItem.Icon>

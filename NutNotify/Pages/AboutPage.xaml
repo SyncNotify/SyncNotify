@@ -218,10 +218,10 @@
                 x:Name="ContentDialog_TextBox"
                 FontFamily="Consolas"
                 FontSize="15"
-                IsReadOnly="True"
-                VerticalScrollBarVisibility="Auto"
                 HorizontalScrollBarVisibility="Auto"
-                Text="{Binding ViewModel.License,Mode=OneWay}" />
+                IsReadOnly="True"
+                Text="{Binding ViewModel.License, Mode=OneWay}"
+                VerticalScrollBarVisibility="Auto" />
         </ui:ContentDialog>
 
     </Grid>
