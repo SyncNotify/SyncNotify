@@ -77,7 +77,10 @@
                             Text="开放源代码许可" />
                     </StackPanel>
                 </Button>-->
-                <controls:IconText Icon="{x:Static ui:SegoeFluentIcons.Permissions}" Click="IconText_Click" Text="开放源代码许可" />
+                <controls:IconText
+                    Click="IconText_Click"
+                    Icon="{x:Static ui:SegoeFluentIcons.Permissions}"
+                    Text="开放源代码许可" />
                 <Expander
                     x:Name="Expander_OpenSource_Information"
                     Margin="50,15,55,0"
@@ -210,6 +213,16 @@
             </StackPanel>
 
         </ScrollViewer>
+        <ui:ContentDialog x:Name="ContentDialog">
+            <TextBox
+                x:Name="ContentDialog_TextBox"
+                FontFamily="Consolas"
+                FontSize="15"
+                IsReadOnly="True"
+                VerticalScrollBarVisibility="Auto"
+                HorizontalScrollBarVisibility="Auto"
+                Text="{Binding ViewModel.License,Mode=OneWay}" />
+        </ui:ContentDialog>
 
     </Grid>
 </Page>

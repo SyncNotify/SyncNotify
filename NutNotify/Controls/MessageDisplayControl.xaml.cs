@@ -1,4 +1,5 @@
 ﻿using iNKORE.UI.WPF.Modern;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -19,12 +20,18 @@ namespace SyncNotify.Pages
         public MessageDisplayControl()
         {
             InitializeComponent();
-            //初始化按钮资源样式
-            accentButtonStyleKey = ThemeKeys.AccentButtonStyleKey;
-            defaultButtonStyleKey = ThemeKeys.DefaultButtonStyleKey;
 
-            isTextHighlighted = false;
-            refreshFontState();
+            //初始化按钮资源样式
+
+            Dispatcher.Invoke(() =>
+            {
+                accentButtonStyleKey = ThemeKeys.AccentButtonStyleKey;
+                defaultButtonStyleKey = ThemeKeys.DefaultButtonStyleKey;
+                isTextHighlighted = false;
+                refreshFontState();
+            });
+
+
 
         }
 
@@ -57,7 +64,6 @@ namespace SyncNotify.Pages
                 font_size_button.SetValue(StyleProperty, Application.Current.Resources[accentButtonStyleKey]);
                 notificationTextBlock.FontSize = 55;
             });
-
         }
 
         //手动设置消息内容的方法

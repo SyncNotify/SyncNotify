@@ -1,4 +1,5 @@
 ﻿using Microsoft.Toolkit.Uwp.Notifications;
+using SyncNotify.Pages;
 using System.Windows;
 
 namespace SyncNotify
@@ -33,7 +34,13 @@ namespace SyncNotify
         //刷新消息用，由别的类来通知来消息，然后根据File里的东西进行刷新
         public void refeshMessage(SyncNotify.Message file)
         {
-            message_display.receiveMessage(file);
+            Dispatcher.Invoke(() => 
+            {
+                MessageDisplayControl messageDisplayControl = new MessageDisplayControl();
+                messageDisplayControl.receiveMessage(file);
+                Message_StackPanel.Children.Add(messageDisplayControl);
+            });
+
             popUp();
         }
 
@@ -41,9 +48,7 @@ namespace SyncNotify
         {
             MainWindow.Instance.Dispatcher.Invoke(() =>
             {
-
                 MainWindow.Instance.popUp();
-
             });
             new ToastContentBuilder()
                    .AddArgument("action", "viewConversation")

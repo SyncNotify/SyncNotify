@@ -3,6 +3,7 @@ using System.Globalization;
 using System.IO;
 using System.Threading;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace SyncNotify.Helper
 {
@@ -29,6 +30,10 @@ namespace SyncNotify.Helper
                 //TODO REMOVAL IN THE FUTURE
                 InternalProper.RecentTime = file.Property.FileCreatingTime;
                 file.Property.FileContent = content;
+                //this.Dispatcher.Invoke(() => 
+                //{
+                //    RealTimeMessagePage.Instance.refeshMessage(file);
+                //});
                 RealTimeMessagePage.Instance.refeshMessage(file);
             }).Start();
         }

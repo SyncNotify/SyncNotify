@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:SyncNotify"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime"
     xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
     DispatcherUnhandledException="Application_DispatcherUnhandledException"
     StartupUri="MainWindow.xaml">
@@ -14,6 +15,12 @@
                 <ResourceDictionary Source="/SyncNotify;component/Style/SectionStyle.xaml" />
                 <ResourceDictionary Source="/SyncNotify;component/Style/TextStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <system:String x:Key="TestStringLong">
+                若知世梦何须醒，不比真如一相会。须臾照见万世长，一叶便知天下秋。我欲凭切枫一闪，做万世之问叩。
+            </system:String>
+            <system:String x:Key="TestStringShort">
+                拾花鸟之一趣，照月风之长路。
+            </system:String>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -18,7 +18,7 @@
                     Padding="10"
                     Background="Transparent"
                     FontSize="55"
-                    Text="DefaultText"
+                    Text="{StaticResource TestStringLong}"
                     TextWrapping="Wrap" />
 
                 <StackPanel Orientation="Horizontal">

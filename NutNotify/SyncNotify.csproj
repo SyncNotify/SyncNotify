@@ -51,9 +51,16 @@
     <Copyright>Copyright ©onear233 2023-2024</Copyright>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="objjhkhgjg\**" />
+    <EmbeddedResource Remove="objjhkhgjg\**" />
+    <None Remove="objjhkhgjg\**" />
+    <Page Remove="objjhkhgjg\**" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Autoupdater.NET.Official">
       <Version>1.8.5</Version>
     </PackageReference>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="FileWatcherEx" Version="2.6.0" />
     <PackageReference Include="iNKORE.UI.WPF" Version="1.2.7.1" />
     <PackageReference Include="iNKORE.UI.WPF.Modern" Version="0.9.29" />
@@ -91,20 +98,17 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ajrls-ufggt-001.ico" />
+    <Resource Include="Assets\LICENSE.txt" />
     <Resource Include="favicon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="aylzz-qqj00-001.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="objjhkhgjg\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
-    <Compile Remove="objjhkhgjg\Debug\App.g.cs" />
-    <Compile Remove="objjhkhgjg\Debug\App.g.i.cs" />
-    <Compile Remove="objjhkhgjg\Debug\MainWindow.g.cs" />
-    <Compile Remove="objjhkhgjg\Debug\MainWindow.g.i.cs" />
-    <Compile Remove="objjhkhgjg\Debug\NutNotify_Content.g.cs" />
-    <Compile Remove="objjhkhgjg\Debug\NutNotify_Content.g.i.cs" />
     <EmbeddedResource Remove="Controls\IconText.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Assets\LICENSE.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Settings.Designer.cs">
@@ -122,5 +126,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
   </ItemGroup>
 </Project>
