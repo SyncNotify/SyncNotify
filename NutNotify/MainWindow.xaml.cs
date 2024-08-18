@@ -19,7 +19,6 @@ namespace SyncNotify
         private EditWatcher watcher;
 
         private static string _notificationText;
-        private NotifyIcon notifyIcon;
         public Visibility mainWindowVisibility
         {
             get

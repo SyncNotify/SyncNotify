@@ -6,3 +6,5 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Interoperability", "CA1416:验证平台兼容性", Justification = "<挂起>", Scope = "member", Target = "~M:SyncNotify.MainWindow.#ctor")]
+[assembly: SuppressMessage("Interoperability", "CA1416:验证平台兼容性", Justification = "<挂起>", Scope = "member", Target = "~M:SyncNotify.Helper.FileSelectHelper.getFilePath(System.String,System.String)~System.String")]
+[assembly: SuppressMessage("Interoperability", "CA1416:验证平台兼容性", Justification = "<挂起>", Scope = "member", Target = "~M:SyncNotify.Helper.FileSelectHelper.getFolderPath(System.String)~System.String")]
