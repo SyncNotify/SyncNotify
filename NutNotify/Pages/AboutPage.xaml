@@ -81,6 +81,31 @@
                     Click="IconText_Click"
                     Icon="{x:Static ui:SegoeFluentIcons.Permissions}"
                     Text="开放源代码许可" />
+
+                <controls:CostumeExpander
+                    ExpanderIcon="{x:Static ui:SegoeFluentIcons.Code}"
+                    ExpanderText="开源项目引用">
+                    <controls:CostumeExpander.ContentControl>
+                        <Grid Margin="5,0,5,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0">
+                                <ui:HyperlinkButton NavigateUri="https://github.com/iNKORE-NET/UI.WPF.Modern">iNKORE-NET/UI.WPF.Modern</ui:HyperlinkButton>
+                            </Label>
+                            <Label Grid.Row="1">
+                                <ui:HyperlinkButton NavigateUri="https://github.com/ravibpatel/AutoUpdater.NET">ravibpatel/AutoUpdater.NET</ui:HyperlinkButton>
+                            </Label>
+                            <Label Grid.Row="2">
+                                <ui:HyperlinkButton NavigateUri="https://github.com/CommunityToolkit/WindowsCommunityToolkit">Microsoft.Toolkit.Uwp.Notifications</ui:HyperlinkButton>
+                            </Label>
+                        </Grid>
+                    </controls:CostumeExpander.ContentControl>
+                </controls:CostumeExpander>
+
+
                 <Expander
                     x:Name="Expander_OpenSource_Information"
                     Margin="50,15,55,0"
@@ -213,7 +238,7 @@
             </StackPanel>
 
         </ScrollViewer>
-        <ui:ContentDialog x:Name="ContentDialog">
+        <ui:ContentDialog x:Name="ContentDialog" Visibility="Collapsed">
             <TextBox
                 x:Name="ContentDialog_TextBox"
                 FontFamily="Consolas"

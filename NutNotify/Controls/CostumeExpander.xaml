@@ -1,0 +1,51 @@
+﻿<UserControl
+    x:Class="SyncNotify.Controls.CostumeExpander"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SyncNotify.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid>
+        <Expander
+            x:Name="Expander"
+            Margin="50,15,55,0"
+            IsExpanded="True"
+            Style="{StaticResource {x:Static ui:ThemeKeys.ExpanderCardStyleKey}}">
+            <Expander.Header>
+                <Grid Margin="0,10,-10,10" VerticalAlignment="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <!--  图标区的Column  -->
+                        <ColumnDefinition Width="Auto" />
+                        <!--  文字说明区的Column  -->
+                        <ColumnDefinition Width="300" />
+                        <!--  操作区域（按钮等）的Column  -->
+                        <ColumnDefinition Width="200" />
+                    </Grid.ColumnDefinitions>
+                    <ui:FontIcon
+                        Grid.RowSpan="2"
+                        Margin="5,15,20,15"
+                        FontSize="20"
+                        Icon="{Binding ExpanderIcon, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+                    <TextBlock
+                        x:Name="TextBlock_Expander"
+                        Grid.Column="1"
+                        Margin="0,0,0,2"
+                        VerticalAlignment="Bottom"
+                        Style="{StaticResource ResourceKey=Setting_Text_Main_Title}"
+                        Text="{Binding ExpanderText, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+                </Grid>
+            </Expander.Header>
+
+            <ContentControl Content="{Binding ContentControl, ElementName=root}" />
+
+        </Expander>
+    </Grid>
+</UserControl>

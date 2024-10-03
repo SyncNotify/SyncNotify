@@ -18,7 +18,7 @@ namespace SyncNotify.Helper
         {
             new Thread(() =>
             {
-                Thread.Sleep(2000);
+                Thread.Sleep(3000);
                 // 打开文件并创建 StreamReader 对象
                 StreamReader reader = new StreamReader(file.Property.FileLocation);
                 // 读取文件内容

@@ -35,6 +35,8 @@ namespace SyncNotify.Controls
             set { SetValue(ButtonTextProperty, value); }
         }
 
+
+        //按钮Click事件
         public event RoutedEventHandler Click;
 
         private void Button_Click(object sender, RoutedEventArgs e)
