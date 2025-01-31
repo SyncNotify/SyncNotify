@@ -1,6 +1,7 @@
 ﻿using Microsoft.Toolkit.Uwp.Notifications;
 using SyncNotify.Pages;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace SyncNotify
 {
@@ -34,14 +35,23 @@ namespace SyncNotify
         //刷新消息用，由别的类来通知来消息，然后根据File里的东西进行刷新
         public void refeshMessage(SyncNotify.Message file)
         {
-            Dispatcher.Invoke(() => 
+            Dispatcher.Invoke(() =>
             {
                 MessageDisplayControl messageDisplayControl = new MessageDisplayControl();
                 messageDisplayControl.receiveMessage(file);
                 Message_StackPanel.Children.Add(messageDisplayControl);
-            });
+                ScrollToBottom();
 
+            });
             popUp();
+        }
+        private void ScrollToBottom()
+        {
+            // 获取滚动视图的总高度
+            double totalHeight = scroll_viewer.ExtentHeight;
+
+            // 滚动到最底部
+            scroll_viewer.ScrollToVerticalOffset(totalHeight);
         }
 
         private void popUp()

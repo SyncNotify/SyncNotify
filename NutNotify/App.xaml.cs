@@ -32,7 +32,7 @@ namespace SyncNotify
 
             if (!ret && !e.Args.Contains("-m")) //-m multiple
             {
-                MessageBox.Show("已有一个程序实例正在运行（请前往右下角托盘图标寻找）","Exception", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("已有一个程序实例正在运行","Exception", MessageBoxButton.OK, MessageBoxImage.Information);
                 Environment.Exit(0);
             }
 

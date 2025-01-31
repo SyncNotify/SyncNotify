@@ -15,7 +15,7 @@
     <Grid>
 
 
-        <ScrollViewer>
+        <ScrollViewer x:Name="scroll_viewer">
             <StackPanel>
                 <TextBlock
                     x:Name="realTimeTextBlock"
@@ -28,13 +28,13 @@
                 <StackPanel x:Name="Message_StackPanel" />
                 <!--<pages:MessageDisplayControl x:Name="message_display" />-->
                 <StackPanel x:Name="Information_StackPanel" VerticalAlignment="Bottom">
-                    <ui:InfoBar
+                    <!--<ui:InfoBar
                         Title="缓更通知"
                         Margin="55,15,55,0"
                         VerticalAlignment="Bottom"
                         IsOpen="True"
                         Message="本程序的开发者已经进入高三，更新速度将大幅下降，对此带来的不便，敬请谅解 [更新于2024/8/18]"
-                        Severity="Informational" />
+                        Severity="Informational" />-->
                 </StackPanel>
             </StackPanel>
 

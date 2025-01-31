@@ -62,8 +62,8 @@
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="FileWatcherEx" Version="2.6.0" />
-    <PackageReference Include="iNKORE.UI.WPF" Version="1.2.7.1" />
-    <PackageReference Include="iNKORE.UI.WPF.Modern" Version="0.9.29" />
+    <PackageReference Include="iNKORE.UI.WPF" Version="1.2.8" />
+    <PackageReference Include="iNKORE.UI.WPF.Modern" Version="0.10.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
       <Version>7.1.3</Version>

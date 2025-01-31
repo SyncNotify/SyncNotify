@@ -71,7 +71,6 @@ namespace SyncNotify.Helper
             dateTimeFormatInfo.LongDatePattern = "yyyy-MM-dd-HH-mm-ss";
             DateTime now = DateTime.Now;
             DateTime targetTime = DateTime.ParseExact(message.Display.FileDisplayTime, "yyyy-MM-dd-HH-mm-ss", CultureInfo.InvariantCulture);
-            //MessageBox.Show(targetTime.ToString() + "现在是" + now.ToString());
             TimeSpan timeSpan = targetTime.Subtract(now);
             System.Timers.Timer timer = new System.Timers.Timer();
             timer.Interval = (int)timeSpan.TotalMilliseconds; // 定时器的运行周期(ms)
