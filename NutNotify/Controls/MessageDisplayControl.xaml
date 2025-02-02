@@ -17,7 +17,7 @@
                     Margin="0,5,0,5"
                     Padding="10"
                     Background="Transparent"
-                    FontSize="55"
+                    FontSize="53"
                     Text="{StaticResource TestStringLong}"
                     TextWrapping="Wrap" />
 

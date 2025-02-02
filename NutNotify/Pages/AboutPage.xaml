@@ -1,4 +1,4 @@
-﻿<Page
+﻿<ui:Page
     x:Class="SyncNotify.AboutPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -245,9 +245,9 @@
                 FontSize="15"
                 HorizontalScrollBarVisibility="Auto"
                 IsReadOnly="True"
-                Text="{Binding ViewModel.License, Mode=OneWay}"
+                Text="{Binding ViewModel.License, Mode=Default}"
                 VerticalScrollBarVisibility="Auto" />
         </ui:ContentDialog>
 
     </Grid>
-</Page>
+</ui:Page>

@@ -3,6 +3,7 @@ using iNKORE.UI.WPF.Modern.Controls;
 using SyncNotify.Pages;
 using SyncNotify.Pages.DiaglogPages;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Forms;
@@ -17,7 +18,8 @@ namespace SyncNotify
         public static MainWindow Instance { get; private set; }
         private static Visibility _mainWindowVisibility;
         private EditWatcher watcher;
-
+        //使用泛型定义dictionary，先初始化page对象，防止切换页面时page重新加载导致实时消息丢失
+        private Dictionary<string, iNKORE.UI.WPF.Modern.Controls.Page> _pagesCache = new Dictionary<string, Page>();
         private static string _notificationText;
         public Visibility mainWindowVisibility
         {
@@ -28,7 +30,6 @@ namespace SyncNotify
             set
             {
                 _mainWindowVisibility = value;
-
                 RaisePropertyChanged("mainWindowVisibility");
             }
         }
@@ -42,7 +43,6 @@ namespace SyncNotify
             set
             {
                 _notificationText = value;
-
                 RaisePropertyChanged("notificationText");
             }
         }
@@ -81,10 +81,13 @@ namespace SyncNotify
             MainFrame.Navigate(new RealTimeMessagePage());
             Title = "SyncNotify" + " " + InternalProper.getVersion();
             navigationView.PaneTitle = Title;
+            //缓存页面
+            _pagesCache["RealTimeMessagePage"] = new RealTimeMessagePage();
+            _pagesCache["HistoryPage"] = new HistoryPage();
+            _pagesCache["SettingsPage"] = new SettingsPage();
+            _pagesCache["AboutPage"] = new AboutPage();
 
 
-            //string s = null;
-            //s.Trim();
 
         }
 
@@ -163,20 +166,19 @@ namespace SyncNotify
             switch (selectedItemTag)
             {
                 case "realTimeMessage":
-                    MainFrame.Navigate(new RealTimeMessagePage());
+                    MainFrame.Navigate(_pagesCache["RealTimeMessagePage"]);
                     break;
                 case "announcement":
                     MainFrame.Navigate(new ComingSoon());
                     break;
                 case "settings":
-                    MainFrame.Navigate(new SettingsPage());
+                    MainFrame.Navigate(_pagesCache["SettingsPage"]);
                     break;
                 case "about":
-                    MainFrame.Navigate(new AboutPage());
+                    MainFrame.Navigate(_pagesCache["AboutPage"]);
                     break;
                 case "historyMessage":
-                    //MainFrame.Navigate(new HistoryPage());
-                    MainFrame.Navigate(new HistoryPage());
+                    MainFrame.Navigate(_pagesCache["HistoryPage"]);
                     break;
             }
         }
