@@ -77,16 +77,16 @@ namespace SyncNotify
             AutoUpdater.Start("https://githubraw.com/onear233/SyncNotify/master/updateInfo.xml");
 
 
-            //初始化默认页面
-            MainFrame.Navigate(new RealTimeMessagePage());
-            Title = "SyncNotify" + " " + InternalProper.getVersion();
-            navigationView.PaneTitle = Title;
+            
             //缓存页面
             _pagesCache["RealTimeMessagePage"] = new RealTimeMessagePage();
             _pagesCache["HistoryPage"] = new HistoryPage();
             _pagesCache["SettingsPage"] = new SettingsPage();
             _pagesCache["AboutPage"] = new AboutPage();
-
+            //初始化默认页面
+            MainFrame.Navigate(_pagesCache["RealTimeMessagePage"]);
+            Title = "SyncNotify" + " " + InternalProper.getVersion();
+            navigationView.PaneTitle = Title;
 
 
         }
