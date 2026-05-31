@@ -1,4 +1,3 @@
-<img width="2111" height="110" alt="af174508836dae71921ab03a1aeaf652" src="https://github.com/user-attachments/assets/7f46169b-f604-4ece-8f68-cb4df46f1e84" /># SyncNotify 教学同步计时与通知系统
 
 SyncNotify 是一款专为中小学课堂教学设计的轻量级、无服务器（Serverless）信息同步与通知工具。
 
