@@ -1,4 +1,4 @@
-# SyncNotify 教学同步计时与通知系统
+<img width="2111" height="110" alt="af174508836dae71921ab03a1aeaf652" src="https://github.com/user-attachments/assets/7f46169b-f604-4ece-8f68-cb4df46f1e84" /># SyncNotify 教学同步计时与通知系统
 
 SyncNotify 是一款专为中小学课堂教学设计的轻量级、无服务器（Serverless）信息同步与通知工具。
 
@@ -18,16 +18,7 @@ SyncNotify 是一款专为中小学课堂教学设计的轻量级、无服务器
 
 项目的核心逻辑是：**“网盘同步文件 + 本地目录监听 = 实时通知”**。
 
-[ 老师手机 (特定App) ]
-│
-▼ (写入 JSON/TXT 消息文件)
-[ 同步网盘 (云端) ]
-│
-▼ (网盘客户端自动下载同步)
-[ 教室 Windows 电脑 (本地同步目录) ]
-│
-▼ (实时监听目录文件变化)
-[ SyncNotify (WPF客户端) ] ────► 📢 弹出全屏/悬浮通知或倒计时
+<img width="2111" height="110" alt="af174508836dae71921ab03a1aeaf652" src="https://github.com/user-attachments/assets/cfbdfc5a-2b05-47f1-ac93-0af0279ba325" />
 
 
 1. **发送端（老师）：** 老师在手机上使用特定软件，将包含通知内容的 `JSON` 或 `TXT` 文件保存到同步网盘的指定目录。
